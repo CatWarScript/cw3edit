@@ -197,7 +197,7 @@ let html = `
          <tr id="tr_field">
             <td id="act">
                <div id="cages_overflow">
-                  <div id="cages_div" style="opacity: 1; background-image: url(/73033.jpg);">
+                  <div id="cages_div" style="opacity: 1; background-image: url(73033.jpg);">
                      <table id="cages">
                         <tbody>
                            <tr>
