@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Макет игровой | CW Script</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+     <link rel="stylesheet" href="main.css"> 
+    <script src=""></script>
+</head>
+    
+<body>
+<div id="app" data-mobile="0" data-time="1722258742" style="display: block;">
+   <span class="other_cats_list"><a href="#">Дурное Сновидение</a></span><br> 
+   <p id="error"></p>
+   <div id="achievement" class="">
+      <div id="achievement_img"><img src="/achievement/0.png"></div>
+      <div id="achievement_container">
+         <div id="achievement_top">Получено достижение!</div>
+         <div id="achievement_name"></div>
+         <div id="achievement_text"></div>
+      </div>
+      <div id="close_achievement" class="no-select">×</div>
+   </div>
+   <div id="timer"></div>
+   <div id="fightPanel" style="display: none; width: 320px;">
+      <img src="symbole/unlock.png" id="block"> <input type="button" value="I" class="hotkey"><input type="button" value="O" class="hotkey"><input type="button" value="L" class="hotkey"><input type="button" value="J" class="hotkey"><input type="button" value="K" class="hotkey"><input type="button" value="T+1" class="hotkey"><input type="button" value="T+2" class="hotkey"><input type="button" value="T+3" class="hotkey"> 
+      <div id="fightLog" style="height: 70px;"></div>
+   </div>
+   <span class="small"><a href="/">Мой кот</a> |
+   <a href="/chat">Чат</a> <span id="newchat"></span> |
+   <a href="/ls">ЛС</a> <span id="newls"></span></span><br> 
+   <table id="main_table" style="border-spacing: 2px;">
+      <tbody>
+         <tr id="tr_chat">
+            <td>
+               <form id="chat_form">
+                  <span id="txt">
+                     <input maxlength="255" size="50" id="text" autocomplete="off"> <!----> <!---->
+                  </span>
+                  <input type="submit" id="msg_send" value="OK"> <!----> <span><span id="volume" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 50%;"></span></span> <b>(правее — громче)</b></span>
+               </form>
+               <div id="chat_msg">
+                  <hr>
+               </div>
+            </td>
+         </tr>
+         <tr id="tr_actions">
+            <td>
+               <span class="title">Действия</span> 
+               <div id="block_deys">
+                  <table style="width: 100%;">
+                     <tbody>
+                        <tr>
+                           <td style="width: 70%;">
+                              <div id="akten">
+                                 <!----> <a href="#" data-id="13" class="dey"><img src="https://catwar.su/cw3/actions/13.png" loading="lazy" title="Принюхаться"></a><a href="#" data-id="17" class="dey"><img src="https://catwar.su/cw3/actions/17.png" loading="lazy" title="Копать землю"></a><a href="#" data-id="27" class="dey"><img src="https://catwar.su/cw3/actions/27.png" loading="lazy" title="Встать в боевую стойку"></a> <a href="#" data-id="flowers" class="specialAct" style="display: none;"><img src="https://catwar.su/cw3/actions/flowers.png" loading="lazy"></a> 
+                              </div>
+                              <div id="dein">
+                                 <!----> <a href="#" data-id="6" class="dey"><img src="https://catwar.su/cw3/actions/6.png" loading="lazy" title="Поднять"></a><a href="#" data-id="9" class="dey"><img src="https://catwar.su/cw3/actions/9.png" loading="lazy" title="Потереться носом о нос"></a><a href="#" data-id="12" class="dey"><img src="https://catwar.su/cw3/actions/12.png" loading="lazy" title="Помурлыкать вместе"></a><a href="#" data-id="14" class="dey"><img src="https://catwar.su/cw3/actions/14.png" loading="lazy" title="Обнюхать"></a><a href="#" data-id="19" class="dey"><img src="https://catwar.su/cw3/actions/19.png" loading="lazy" title="Вылизать"></a><a href="#" data-id="51" class="dey"><img src="https://catwar.su/cw3/actions/51.png" loading="lazy" title="Потереться щекой о щёку"></a><a href="#" data-id="52" class="dey"><img src="https://catwar.su/cw3/actions/52.png" loading="lazy" title="Переплести хвосты"></a><a href="#" data-id="53" class="dey"><img src="https://catwar.su/cw3/actions/53.png" loading="lazy" title="Повалять по земле"></a><a href="#" data-id="88" class="dey"><img src="https://catwar.su/cw3/actions/88.png" loading="lazy" title="Вслушаться в шум ракушки"></a> <a href="#" id="dialog"><img src="https://catwar.su/cw3/actions/talk.png" loading="lazy"></a>  <a href="#" data-id="exchange" class="specialAct" style=""><img src="https://catwar.su/cw3/actions/exchange.png" loading="lazy"></a>
+                              </div>
+                           </td>
+                           <td>
+                              Действия с каким-либо котом в соседней клетке:<br> 
+                              <select id="mit">
+                                 <option value="0">Действия с собой</option>
+                                 <option value="1292731">Ломушка</option>
+                              </select>
+                              <br> <input type="button" id="mitok" value="Показать">
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div id="block_mess"></div>
+            </td>
+         </tr>
+         <div id="clockContainer">
+            <div id="clock">18:52:15</div>
+            <div id="date">Понедельник, 29 июля</div>
+         </div>
+         <tr id="tr_tos">
+            <td>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td>
+                           <!----> <!---->
+                        </td>
+                        <td>
+                           <div id="tos" style="background: #6593B6;background: -moz-linear-gradient(0deg, #90B9D0, #3B6C9B);background: -webkit-linear-gradient(0deg, #90B9D0, #3B6C9B);background: -o-linear-gradient(0deg, #90B9D0, #3B6C9B);background: -ms-linear-gradient(0deg, #90B9D0, #3B6C9B);background: linear-gradient(90deg, #90B9D0, #3B6C9B);"></div>
+                        </td>
+                        <td><a href="/time" target="_blank" id="hour"><img src="https://catwar.su/cw3/symbole/hours/15.png"></a></td>
+                        <td><a href="/time" target="_blank"><img src="https://catwar.su/cw3/symbole/season0.png"></a></td>
+                        <!---->
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+         <tr id="tr_sky">
+            <td>
+               <div id="sky" style="background-image: url(//e.catwar.su/cw3/sky/5.png);"></div>
+            </td>
+         </tr>
+         <tr id="tr_field">
+            <td id="act">
+               <div id="cages_overflow">
+                  <div id="cages_div" style="opacity: 1; background-image: url(https://catwar.su/cw3/spacoj/73033.jpg);">
+                     <table id="cages">
+                        <tbody>
+                           <tr>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <span class="catWithArrow">
+                                       <!----> 
+                                       <span class="cat">
+                                          <div data-v-59afe5e8="" class="d">
+                                             <div data-v-59afe5e8="" class="first" style="background-size: 78%; background-image: url(&quot;/cw3/composited/558bcd92715b8c88.png); position: absolute;"></div>
+                                          </div>
+                                          <!----> <!----> 
+                                          <span class="cat_tooltip">
+                                             <u><a href="/cat1292731">Ломушка</a></u><br> <!----> 
+                                             <div><small><i>Будущая стражница</i></small></div>
+                                             У неё во рту:
+                                             <ol class="mouth">
+                                                <li><img src="https://catwar.su/cw3/things/180.png"></li>
+                                             </ol>
+                                             Её запах:<br> <img src="odoroj/11.png"><br> <span class="online">[ <font color="#A52A2A">Спит</font> ]</span>
+                                          </span>
+                                          <!---->
+                                       </span>
+                                    </span>
+                                    <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <span class="catWithArrow">
+                                       <!----> 
+                                       <span class="cat">
+                                          <div data-v-59afe5e8="" class="d">
+                                             <div data-v-59afe5e8="" class="first" style="background-size: 86%; background-image: url(https://raw.githubusercontent.com/CatWarScript/myFiles/main/zapal.png); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="" style="background-size: 86%; background-image: url(https://catwar.su/cw3/cats/0/costume/143.png); position: absolute;"></div>
+                                          </div>
+                                          <!----> <!----> 
+                                          <span class="cat_tooltip">
+                                             <u><a href="/cat1562064">Звёздный Запал</a></u><br> <!----> 
+                                             <div><small><i>Предводитель</i></small></div>
+                                             У него во рту:
+                                             <ol class="mouth">
+                                                <li><img src="https://catwar.su/cw3/things/2896.png"></li>
+                                             </ol>
+                                             Его запах:<br> <img src="odoroj/3.png"><br> <span class="online">[ <font color="#006400">В игре</font> ]</span>
+                                          </span>
+                                          <!---->
+                                       </span>
+                                    </span>
+                                    <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage" style="background: url(&quot;weather/puddle_1.png) 0px 0px;">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <span class="move_parent"><img src="https://catwar.su/cw3/moves/73000.png" class="move_img"> <span class="move_name">Камышовая поляна</span></span>
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <span class="move_parent"><img src="https://catwar.su/cw3/moves/73000.png" class="move_img"> <span class="move_name">Мшистая полянка</span></span>
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <span class="catWithArrow">
+                                       <!----> 
+                                       <span class="cat">
+                                          <div data-v-59afe5e8="" class="d">
+                                             <div data-v-59afe5e8="" class="first" style="background-size: 73%; background-image: url(&quot;/cw3/composited/b0e10b7f6a836277.png); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="" style="background-size: 73%; background-image: url(&quot;/cw3/cats/0/defects/dirt/base/1/1.png); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="" style="background-size: 73%; background-image: url(&quot;/cw3/cats/0/defects/dirt/base/1/tail/6/1.png); position: absolute;"></div>
+                                          </div>
+                                          <!----> <!----> 
+                                          <span class="cat_tooltip">
+                                             <u><a href="/cat1601347">Выдролап</a></u><br> <!----> 
+                                             <div><small><i>Оруженосец</i></small></div>
+                                             <!---->
+                                             Его запах:<br> <img src="odoroj/3.png"><br> <span class="online">[ <font color="#A52A2A">Спит</font> ]</span>
+                                          </span>
+                                          <!---->
+                                       </span>
+                                    </span>
+                                    <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <span class="catWithArrow">
+                                       <!----> 
+                                       <span class="cat">
+                                          <div data-v-59afe5e8="" class="d">
+                                             <div data-v-59afe5e8="" class="first" style="background-size: 82%; background-image: url(&quot;/cw3/composited/5cb240656bc1a2e5.png); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="" style="background-size: 82%; background-image: url(&quot;/cw3/cats/0/costume/797.png); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="" style="background-size: 82%; background-image: url(&quot;/cw3/cats/0/defects/trauma/1.png); position: absolute;"></div>
+                                          </div>
+                                          <!----> <!----> 
+                                          <span class="cat_tooltip">
+                                             <u><a href="/cat1567977">Шутовка</a></u><br> <!----> 
+                                             <div><small><i>Королева</i></small></div>
+                                             У неё во рту:
+                                             <ol class="mouth">
+                                                <li><img src="https://catwar.su/cw3/things/560.png"></li>
+                                             </ol>
+                                             Её запах:<br> <img src="odoroj/3.png"><br> <span class="online">[ <font color="#333333">Недавно ушла</font> ]</span>
+                                          </span>
+                                          <!---->
+                                       </span>
+                                    </span>
+                                    <!---->
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <span class="move_parent"><img src="https://catwar.su/cw3/moves/9000.png" class="move_img"> <span class="move_name">Галечный берег</span></span>
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="cage">
+                                 <div class="cage_items" style="background: url(https://catwar.su/cw3/things/2076.png) 100% 100% no-repeat, url(https://catwar.su/cw3/things/8308.png) 0% 100% no-repeat, url(https://catwar.su/cw3/things/2076.png) 100% 0% no-repeat, url(https://catwar.su/cw3/things/418.png) 0% 0% no-repeat;">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items" style="background: url(https://catwar.su/cw3/things/1035.png) 0% 100% no-repeat, url(https://catwar.su/cw3/things/1035.png) 100% 0% no-repeat, url(https://catwar.su/cw3/things/1035.png) 0% 0% no-repeat;">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <span class="move_parent"><img src="https://catwar.su/cw3/moves/9000.png" class="move_img"> <span class="move_name">Шелестящий тростник</span></span>
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                     <!----> <!---->
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr id="tr_mouth">
+            <td>
+               <span class="title">Во рту</span> 
+               <div id="itemList">
+                  <div id="37911598" class="itemInMouth"><img src="https://catwar.su/cw3/things/2896.png"></div>
+               </div>
+               <a href="#">Смешивать</a> <!----><br><br> 
+               <div id="thdey" style="display: none;">
+                  <ul style="margin: 0px; padding: 0px 0px 0px 1.4em;">
+                     <li><a href="#" id="eat"></a></li>
+                     <li><a href="#" id="put">Положить на землю</a></li>
+                     <li>Осмотреть (<a href="#">поверхностно</a> или
+                        <a href="#">тщательно</a>)
+                     </li>
+                     <!----> <!----> 
+                     <li><a href="#">Закопать</a></li>
+                     <li><a href="#">Закрепить</a></li>
+                     <!----> 
+                     <li>Уникальный ID: </li>
+                  </ul>
+                  <br> 
+                  <div id="layer" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span></div>
+                  <br>
+                  Чем правее, тем глубже будет закопан предмет. <a href="/about?id=12" target="_blank">[?]</a><br><br>
+               </div>
+               <div id="ctdey" style="display: none;">
+                  <ul style="margin: 0px; padding: 0px 0px 0px 1.4em;">
+                     <li><a href="#" id="put2">Положить на землю</a></li>
+                     <li><a href="/cat0" target="_blank">Перейти в профиль</a></li>
+                  </ul>
+               </div>
+            </td>
+         </tr>
+         <tr id="tr_info">
+            <td>
+               <table id="info_main">
+                  <tbody>
+                     <tr>
+                        <td id="family" class="infos">
+                           <h2><a href="#" id="relatives" class="toggle">Родственные связи</a></h2>
+                           <div id="relatives_block">
+                              <div id="family_block"><b>Мама</b>: <a href="/cat920769">Линь</a><br><b>Папа</b>: <a href="/cat1454689">Омуль</a><br><b>Братья и сёстры</b>: <a href="/cat1252965">Неугодненький</a>, <i><a href="/cat1394475">Шутливая Проказница</a></i>, <i><a href="/cat1535768">Крик Галки</a></i>, <i><a href="/cat1541622">Душевная Боль</a></i>, <i><a href="/cat1569026">Крик</a></i>, <a href="/cat1572997">Мурчишка</a>, <i><a href="/cat1608702">Дятлушенька</a></i><br><b>Котята</b>: <i><a href="/cat1579700">Высокомерие</a></i>, <i><a href="/cat1597691">Солнцещёкая</a></i><br><br><i>Курсивом</i> выделены приёмные родственники.</div>
+                              <a href="/relatives">Генеалогический кустик</a> 
+                              <div id="pairs">
+                                 <img src="/img/loading.gif" id="pairs-loading" style="margin-top: 5px; display: none;"> 
+                                 <p>
+                                    Вы стали парой с кошкой по имени <a href="/cat936551">Задорница</a> на <span data-who="936551" class="pair">65.3</span>%.
+                                    <a href="#" title="Разлюбить" class="pair-delete"><img src="https://catwar.su/cw3/symbole/pair_delete.png"></a> <a href="#" title="Усыновить/удочерить кого-либо" class="adopt"><img src="https://catwar.su/cw3/symbole/pair_adopt.png"></a> <!---->
+                                 </p>
+                              </div>
+                           </div>
+                        </td>
+                        <td id="history" class="infos">
+                           <h2><a href="#" id="history" class="toggle">История</a></h2>
+                           <div id="history_block">
+                              <span id="ist">История очищена. Вылизался. Вылизался. Принюхался. Принюхался. Пошёл в локацию «Мель». Пошёл в локацию «Глубина». Пошёл в локацию «Дно реки». Нырнул. Не нашёл ничего интересного. Нырнул. Обнаружил мох. Нырнул. Не нашёл ничего интересного. Пошёл в локацию «Глубина». Отменил действие. Пошёл в локацию «Глубина». Пошёл в локацию «Мель». Положил на землю чёрный ошейник. Поднял с земли камень. Положил на землю мох. Положил на землю камень. Поднял с земли чёрный ошейник. Пошёл в локацию «Галечный берег». Поспал. Поспал. Принюхался. Принюхался. Принюхался. Поспал. Поспал. Вылизался. Пошёл в локацию «Камышовые заросли».</span><br> <a href="#" id="history_clean">Очистить историю</a> 
+                              <div style="background-color: white;">
+                                 Моё местонахождение: <span id="location">Камышовые заросли</span>
+                              </div>
+                           </div>
+                        </td>
+                        <td id="parameter" class="infos">
+                           <h2><a href="#" id="parameters" class="toggle">Параметры и навыки</a><a id="parameters-alert" href="#">+</a></h2>
+                           <div id="parameters_block">
+                              <table id="dream_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -30px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="dream">
+                                             <table class="parameter">
+                                                <tbody>
+                                                   <tr>
+                                                      <td style="width: 150px; background-color: green;"></td>
+                                                      <td style="background-color: red; width: 0px;"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="hunger_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -60px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="hunger">
+                                             <table class="parameter">
+                                                <tbody>
+                                                   <tr>
+                                                      <td style="width: 109px; background-color: green;"></td>
+                                                      <td style="background-color: red; width: 41px;"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="thirst_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -15px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="thirst">
+                                             <table class="parameter">
+                                                <tbody>
+                                                   <tr>
+                                                      <td style="width: 87px; background-color: green;"></td>
+                                                      <td style="background-color: red; width: 63px;"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="need_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -45px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="need">
+                                             <table class="parameter">
+                                                <tbody>
+                                                   <tr>
+                                                      <td style="width: 0px; background-color: green;"></td>
+                                                      <td style="background-color: red; width: 150px;"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="health_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" id="vundo_icon" style="background-position: 0px -90px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="health">
+                                             <table class="parameter">
+                                                <tbody>
+                                                   <tr>
+                                                      <td style="width: 150px; background-color: green;"></td>
+                                                      <td style="background-color: red; width: 0px;"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="clean_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -120px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="clean">
+                                             <table class="parameter">
+                                                <tbody>
+                                                   <tr>
+                                                      <td style="width: 150px; background-color: green;"></td>
+                                                      <td style="background-color: red; width: 0px;"></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <hr>
+                              <table id="smell_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" id="smell_icon" style="background-position: 0px 0px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="smell">
+                                             <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                   <tr>
+                                                      <td>
+                                                         <table class="parameter">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td style="width:17px;background-color:green"></td>
+                                                                  <td style="background-color:#ccc;width:133px"></td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                      <td>&nbsp;<b>7</b></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="dig_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -105px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="dig">
+                                             <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                   <tr>
+                                                      <td>
+                                                         <table class="parameter">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td style="width:94px;background-color:green"></td>
+                                                                  <td style="background-color:#ccc;width:56px"></td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                      <td>&nbsp;<b>4</b></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="swim_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -135px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="swim">
+                                             <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                   <tr>
+                                                      <td>
+                                                         <table class="parameter">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td style="width:11px;background-color:green"></td>
+                                                                  <td style="background-color:#ccc;width:139px"></td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                      <td>&nbsp;<b>8</b></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="might_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -150px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="might">
+                                             <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                   <tr>
+                                                      <td>
+                                                         <table class="parameter">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td style="width:150px;background-color:green"></td>
+                                                                  <td style="background-color:#ccc;width:0px"></td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                      <td>&nbsp;<b>9</b></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="tree_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -195px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="tree">
+                                             <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                   <tr>
+                                                      <td>
+                                                         <table class="parameter">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td style="width:150px;background-color:green"></td>
+                                                                  <td style="background-color:#ccc;width:0px"></td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                      <td>&nbsp;<b>9</b></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table id="observ_table">
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <div class="symbole" style="background-position: 0px -210px"></div>
+                                       </td>
+                                       <td>
+                                          <span id="observ">
+                                             <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                   <tr>
+                                                      <td>
+                                                         <table class="parameter">
+                                                            <tbody>
+                                                               <tr>
+                                                                  <td style="width:93px;background-color:green"></td>
+                                                                  <td style="background-color:#ccc;width:57px"></td>
+                                                               </tr>
+                                                            </tbody>
+                                                         </table>
+                                                      </td>
+                                                      <td>&nbsp;<b>6</b></td>
+                                                   </tr>
+                                                </tbody>
+                                             </table>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <!----><input class="cs-set" id="turnOnLightCatWar" type="checkbox" checked="" style="display: none;"><label class="cs-set" for="turnOnLightCatWar" style="display: none;">Облегчалочка</label>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+   <p><b>Тёмные баллы (шанс попасть в Сумрачный лес после смерти):</b> <span id="black">0</span></p>
+</div>
+
+    <div id="compactTool">
+    <div id="ctHeader">Настройка компактной игровой</div>
+    <div id="ctFolderBtns"><span id="folHandle1">1</span><span id="folHandle2">2</span><span id="folHandle3">3</span></div>
+      <div id="ctInputs">
+        <div id="folder1" class="folder active">
+        <table>
+          <tr>
+            <td>
+              Блок
+            </td><td>
+              Фоновый цвет
+            </td><td>
+              Позиция (гор)
+            </td><td>
+              Позиция (вер)
+            </td><td>
+              Ширина
+            </td><td>
+              Высота
+            </td><td>
+              Цвет текста
+            </td>
+          </tr>
+          <tr>
+            <td>
+              История
+            </td><td>
+            <input class="cs-set" id="cgHisCol" type="color"${globals.cgHisCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgHisX" type="number"${globals.cgHisX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgHisY" type="number"${globals.cgHisY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgHisWid" type="number"${globals.cgHisWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgHisHei" type="number"${globals.cgHisHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+              <input class="cs-set" id="cgHisFCol" type="color"${globals.cgHisFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Параметры
+            </td><td>
+            <input class="cs-set" id="cgParCol" type="color"${globals.cgParCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgParX" type="number"${globals.cgParX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgParY" type="number"${globals.cgParY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgParWid" type="number"${globals.cgParWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgParHei" type="number"${globals.cgParHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgParFCol" type="color"${globals.cgParFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Чат
+            </td><td>
+            <input class="cs-set" id="cgChatCol" type="color"${globals.cgChatCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgChatX" type="number"${globals.cgChatX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgChatY" type="number"${globals.cgChatY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgChatWid" type="number"${globals.cgChatWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgChatHei" type="number"${globals.cgChatHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgChatFCol" type="color"${globals.cgChatFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Действия
+            </td><td>
+            <input class="cs-set" id="cgDeysCol" type="color"${globals.cgDeysCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgDeysX" type="number"${globals.cgDeysX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgDeysY" type="number"${globals.cgDeysY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgDeysWid" type="number"${globals.cgDeysWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgDeysHei" type="number"${globals.cgDeysHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgDeysFCol" type="color"${globals.cgDeysFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              РС
+            </td><td>
+            <input class="cs-set" id="cgRSCol" type="color"${globals.cgRSCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgRSX" type="number"${globals.cgRSX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRSY" type="number"${globals.cgRSY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRSWid" type="number"${globals.cgRSWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRSHei" type="number"${globals.cgRSHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRSFCol" type="color"${globals.cgRSFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Во рту
+            </td>
+            <td>
+            <input class="cs-set" id="cgRotCol" type="color"${globals.cgRotCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgRotX" type="number"${globals.cgRotX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRotY" type="number"${globals.cgRotY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRotWid" type="number"${globals.cgRotWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRotHei" type="number"${globals.cgRotHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgRotFCol" type="color"${globals.cgRotFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Душевые
+            </td>
+            <td>
+            <input class="cs-set" id="cgOCLCol" type="color"${globals.cgOCLCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgOCLX" type="number"${globals.cgOCLX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgOCLY" type="number"${globals.cgOCLY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgOCLWid" type="number"${globals.cgOCLWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgOCLHei" type="number"${globals.cgOCLHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgOCLFCol" type="color"${globals.cgOCLFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Мой кот | Чат
+            </td>
+            <td>
+            <input class="cs-set" id="cgSmallCol" type="color"${globals.cgSmallCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgSmallX" type="number"${globals.cgSmallX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSmallY" type="number"${globals.cgSmallY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSmallWid" type="number"${globals.cgSmallWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSmallHei" type="number"${globals.cgSmallHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSmallFCol" type="color"${globals.cgSmallFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Тёмные баллы
+            </td>
+            <td>
+            <input class="cs-set" id="cgTBCol" type="color"${globals.cgTBCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgTBX" type="number"${globals.cgTBX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTBY" type="number"${globals.cgTBY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTBWid" type="number"${globals.cgTBWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTBHei" type="number"${globals.cgTBHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTBFCol" type="color"${globals.cgTBFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Часы
+            </td>
+            <td>
+            <input class="cs-set" id="cgClockCol" type="color"${globals.cgClockCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgClockX" type="number"${globals.cgClockX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgClockY" type="number"${globals.cgClockY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgClockWid" type="number"${globals.cgClockWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgClockHei" type="number"${globals.cgClockHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgClockFCol" type="color"${globals.cgClockFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Локация
+            </td>
+            <td>
+            <input class="cs-set" id="cgLocCol" type="color"${globals.cgLocCol?' checked':''} style="width: 35px;">
+            </td><td>
+            <input class="cs-set" id="cgLocX" type="number"${globals.cgLocX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgLocY" type="number"${globals.cgLocY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgLocWid" type="number"${globals.cgLocWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgLocHei" type="number"${globals.cgLocHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgLocFCol" type="color"${globals.cgLocFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              ТОС и котовремя
+            </td>
+            <td>
+            <input class="cs-set" id="cgTOSCol" type="color"${globals.cgTOSCol?' checked':''} style="width: 35px;">
+            </td>
+            <td>
+            <input class="cs-set" id="cgTOSX" type="number"${globals.cgTOSX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTOSY" type="number"${globals.cgTOSY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTOSWid" type="number"${globals.cgTOSWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTOSHei" type="number"${globals.cgTOSHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgTOSFCol" type="color"${globals.cgTOSFCol?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Небо
+            </td>
+            <td>
+            <input class="cs-set" id="cgSkyCol" type="color"${globals.cgSkyCol?' checked':''} style="width: 35px;" disabled>
+            </td><td>
+            <input class="cs-set" id="cgSkyX" type="number"${globals.cgSkyX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSkyY" type="number"${globals.cgSkyY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSkyWid" type="number"${globals.cgSkyWid?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSkyHei" type="number"${globals.cgSkyHei?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+            <input class="cs-set" id="cgSkyFCol" type="color"${globals.cgSkyFCol?' checked':''} style="width: 35px;" disabled>
+            </td>
+          </tr>
+          </table>
+        </div>
+        <div id="folder2" class="folder">
+          <table>
+          <tr>
+            <td>
+              Вся страница
+            </td><td>
+            <input class="cs-set" id="cgBodyCol" type="color"${globals.cgBodyCol?' checked':''} style="width: 35px;">
+            </td><td>
+              Размер шрифта >
+            </td><td>
+              <input class="cs-set" id="cgFontSize" type="number"${globals.cgFontSize?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+              Шрифт у "Мой кот" >
+            </td><td>
+              <input class="cs-set" id="cgSmallFW" type="number"${globals.cgSmallFW?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+              😨
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Плюсик параметров
+            </td><td>
+              ь
+            </td><td>
+              <input class="cs-set" id="cgParAlertX" type="number"${globals.cgParAlertX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+              <input class="cs-set" id="cgParAlertY" type="number"${globals.cgParAlertY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
+            </td><td>
+              Цвет плюсика >
+            </td><td>
+              <input class="cs-set" id="cgParAlertFCol" type="color"${globals.cgParAlertFCol?' checked':''} style="width: 35px;">
+            </td><td>
+              ъ
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Обводка блоков
+            </td><td>
+              Ширина
+            </td><td>
+              Цвет
+            </td><td>
+              Тип
+            </td><td>
+              Обводка у ТБ
+            </td><td>
+              Фон упом.
+            </td><td>
+              Текст упом.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input class="cs-set" id="cgBorders" type="checkbox"${globals.cgBorders?' checked':''}>
+            </td><td>
+              <input class="cs-set" id="cgBorderWid" type="number"${globals.cgBorderWid?' checked':''} style="width: 45px;" step="0.5" max="15" min="0">
+            </td><td>
+              <input class="cs-set" id="cgBorderCol" type="color"${globals.cgBorderCol?' checked':''} style="width: 35px;">
+            </td><td>
+              <input class="cs-set" id="cgBorderType" type="text"${globals.cgBorderType?' checked':''} style="width: 45px;" step="0.5" max="15" min="0">
+            </td><td>
+              <input class="cs-set" id="cgTbBorder" type="checkbox"${globals.cgTbBorder?' checked':''}>
+            </td><td>
+              <input class="cs-set" id="cgYouBG" type="color"${globals.cgYouBG?' checked':''} style="width: 35px;">
+            </td>
+            <td>
+              <input class="cs-set" id="cgYouFC" type="color"${globals.cgYouFC?' checked':''} style="width: 35px;">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Цвет input'ов  >
+            </td>
+            <td>
+              <input class="cs-set" id="cgInputCol" type="color"${globals.cgInputCol?' checked':''} style="width: 35px;">
+            </td><td>
+              Текст input'ов >
+            </td><td>
+              <input class="cs-set" id="cgInputFCol" type="color"${globals.cgInputFCol?' checked':''} style="width: 35px;">
+            </td><td>
+              Скруглённый радиус
+            </td><td>
+              У локации
+            </td><td>
+              У ТБ
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Радиус >
+            </td><td>
+              <input class="cs-set" id="cgBorderRad" type="number"${globals.cgBorderRad?' checked':''} style="width: 45px;" step="0.5" max="150" min="0">
+            </td><td>
+              Перетаскивать поле? >
+            </td><td>
+              <input class="cs-set" id="cgIsFieldFix" type="checkbox"${globals.cgIsFieldFix?' checked':''}>
+            </td><td>
+              <input class="cs-set" id="cgIsBorderRad" type="checkbox"${globals.cgIsBorderRad?' checked':''}>
+            </td><td>
+              <input class="cs-set" id="cgIsLocBorderRad" type="checkbox"${globals.cgIsLocBorderRad?' checked':''}>
+            </td><td>
+              <input class="cs-set" id="cgIsTBBorderRad" type="checkbox"${globals.cgIsTBBorderRad?' checked':''}>
+            </td>
+          </tr>
+                  <tr>
+            <td>
+              Поменять скроллы >
+            </td><td>
+              <input class="cs-set" id="cgDeleteScrolls" type="checkbox"${globals.cgDeleteScrolls?' checked':''}>
+            </td><td>
+              Ползунок чата
+            </td><td>
+              <input class="cs-set" id="cgChatSliderCol" type="color"${globals.cgChatSliderCol?' checked':''} style="width: 35px;">
+            </td><td>
+              Бордер ползунка
+            </td><td>
+              <input class="cs-set" id="cgChatSliderBorderCol" type="color"${globals.cgChatSliderBorderCol?' checked':''} style="width: 35px;">
+            </td><td>
+              15.08
+            </td>
+          </tr>
+        </table>
+        </div>
+        <div id="folder3" class="folder">
+        <input class="cs-set" id="cgDelParH2" type="checkbox"${globals.cgDelParH2?' checked':''}><label for="cgDelParH2">Убрать h2 у параметров</label><br>
+        <input class="cs-set" id="cgDelHisH2" type="checkbox"${globals.cgDelHisH2?' checked':''}><label for="cgDelHisH2">Убрать h2 у истории</label><br>
+        <input class="cs-set" id="cgDelRSH2" type="checkbox"${globals.cgDelRSH2?' checked':''}><label for="cgDelRSH2">Убрать h2 у РС</label><br>
+        <input class="cs-set" id="cgInfoH2DelMargins" type="checkbox"${globals.cgInfoH2DelMargins?' checked':''}><label for="cgInfoH2DelMargins">Убрать отступы сверху/снизу у h2 блоков информации</label><br>
+        <input class="cs-set" id="cgInfoH2FontSize" type="number"${globals.cgInfoH2FontSize?' checked':''} style="width: 45px;" step="1" max="150" min="0"><label for="cgInfoH2FontSize">Размер шрифта заголовков</label><br>
+        <input class="cs-set" id="cgSeparateLocation" type="checkbox"${globals.cgSeparateLocation?' checked':''}><label for="cgSeparateLocation">Отоброжать блок с локацией отдельно</label><br>
+        <label for="inputImport">Импорт настроек </label><input type="text" id="inputImport"><br>
+        <button id="inputExport">Экспорт настроек</button>
+        <input id="outputExport">
+        </div>
+          </div>
+    </div>
+</body>
+</html>
