@@ -149,7 +149,7 @@ let html = `
                         <tr>
                            <td style="width: 70%;">
                               <div id="akten">
-                                 <!----> <a href="#" data-id="13" class="dey"><img src="/13.png" loading="lazy" title="Принюхаться"></a><a href="#" data-id="17" class="dey"><img src="/17.png" loading="lazy" title="Копать землю"></a><a href="#" data-id="27" class="dey"><img src="/27.png" loading="lazy" title="Встать в боевую стойку"></a> <a href="#" data-id="flowers" class="specialAct" style="display: none;"><img src="https://catwar.su/cw3/actions/flowers.png" loading="lazy"></a> 
+                                 <!----> <a href="#" data-id="13" class="dey"><img src="13.png" loading="lazy" title="Принюхаться"></a><a href="#" data-id="17" class="dey"><img src="17.png" loading="lazy" title="Копать землю"></a><a href="#" data-id="27" class="dey"><img src="27.png" loading="lazy" title="Встать в боевую стойку"></a> <a href="#" data-id="flowers" class="specialAct" style="display: none;"><img src="https://catwar.su/cw3/actions/flowers.png" loading="lazy"></a> 
                               </div>
                               <div id="dein">
                               </div>
@@ -181,8 +181,8 @@ let html = `
                         <td>
                            <div id="tos" style="background: #6593B6;background: -moz-linear-gradient(0deg, #90B9D0, #3B6C9B);background: -webkit-linear-gradient(0deg, #90B9D0, #3B6C9B);background: -o-linear-gradient(0deg, #90B9D0, #3B6C9B);background: -ms-linear-gradient(0deg, #90B9D0, #3B6C9B);background: linear-gradient(90deg, #90B9D0, #3B6C9B);"></div>
                         </td>
-                        <td><a href="/time" target="_blank" id="hour"><img src="/hours15.png"></a></td>
-                        <td><a href="/time" target="_blank"><img src="/season0.png"></a></td>
+                        <td><a href="/time" target="_blank" id="hour"><img src="hours15.png"></a></td>
+                        <td><a href="/time" target="_blank"><img src="season0.png"></a></td>
                         <!---->
                      </tr>
                   </tbody>
@@ -191,7 +191,7 @@ let html = `
          </tr>
          <tr id="tr_sky">
             <td>
-               <div id="sky" style="background-image: url(/sky5.png);"></div>
+               <div id="sky" style="background-image: url(sky5.png);"></div>
             </td>
          </tr>
          <tr id="tr_field">
@@ -224,7 +224,7 @@ let html = `
                                         </div>
                                         <span class="cat">
                                             <div data-v-59afe5e8="" class="d dead">
-                                            <div data-v-59afe5e8="" class="first" style="background-size: 100%; background-image: url('/dursnov.png'); position: absolute;"></div>
+                                            <div data-v-59afe5e8="" class="first" style="background-size: 100%; background-image: url('dursnov.png'); position: absolute;"></div>
                                             <div data-v-59afe5e8="" class="" style="background-size: 100%; background-image: url(&quot;/cw3/cats/0/costume/795.png&quot;); position: absolute;"></div>
                                             </div>
                                             <!----> <!----> 
@@ -233,11 +233,11 @@ let html = `
                                             <div><small><i>Главный админ 😨</i></small></div>
                                             У него во рту:
                                             <ol class="mouth">
-                                                <li><img src="/647.png"></li>
-                                                <li><img src="/344.png"></li>
-                                                <li><img src="/341.png"></li>
+                                                <li><img src="647.png"></li>
+                                                <li><img src="344.png"></li>
+                                                <li><img src="341.png"></li>
                                             </ol>
-                                            Его запах:<br> <img src="/51.png"><br> <a class="cws-show-more" href="#" data-id="1293224">Подробнее</a><br><span class="online">[ <font color="#006400">В игре</font> ]</span>
+                                            Его запах:<br> <img src="51.png"><br> <a class="cws-show-more" href="#" data-id="1293224">Подробнее</a><br><span class="online">[ <font color="#006400">В игре</font> ]</span>
                                             </span>
                                             <!---->
                                         </span>
@@ -251,7 +251,7 @@ let html = `
                                        <!----> 
                                        <span class="cat">
                                           <div data-v-59afe5e8="" class="d">
-                                             <div data-v-59afe5e8="" class="first" style="background-size: 86%; background-image: url('/zapal.png'); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="first" style="background-size: 86%; background-image: url('zapal.png'); position: absolute;"></div>
                                              <div data-v-59afe5e8="" class="" style="background-size: 86%; background-image: url('https://catwar.su/cw3/cats/0/costume/143.png'); position: absolute;"></div>
                                           </div>
                                           <!----> <!----> 
@@ -260,10 +260,10 @@ let html = `
                                              <div><small><i>Предводитель</i></small></div>
                                              У него во рту:
                                              <ol class="mouth">
-                                                <li><img src="/647.png"></li>
-                                                <li><img src="/2896.png"></li>
+                                                <li><img src="647.png"></li>
+                                                <li><img src="2896.png"></li>
                                              </ol>
-                                             Его запах:<br> <img src="/3.png"><br> <span class="online">[ <font color="#006400">В игре</font> ]</span>
+                                             Его запах:<br> <img src="3.png"><br> <span class="online">[ <font color="#006400">В игре</font> ]</span>
                                           </span>
                                           <!---->
                                        </span>
@@ -283,7 +283,7 @@ let html = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <!----> <span class="move_parent"><img src="/73000.png" class="move_img"> <span class="move_name">Камышовая поляна</span></span>
+                                    <!----> <span class="move_parent"><img src="73000.png" class="move_img"> <span class="move_name">Камышовая поляна</span></span>
                                  </div>
                               </td>
                               <td class="cage">
@@ -293,7 +293,7 @@ let html = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <!----> <span class="move_parent"><img src="/73000.png" class="move_img"> <span class="move_name">Мшистая полянка</span></span>
+                                    <!----> <span class="move_parent"><img src="73000.png" class="move_img"> <span class="move_name">Мшистая полянка</span></span>
                                  </div>
                               </td>
                               <td class="cage">
@@ -505,7 +505,7 @@ let html = `
                            <tr>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <!----> <span class="move_parent"><img src="/9000.png" class="move_img"> <span class="move_name">Галечный берег</span></span>
+                                    <!----> <span class="move_parent"><img src="9000.png" class="move_img"> <span class="move_name">Галечный берег</span></span>
                                  </div>
                               </td>
                               <td class="cage">
@@ -556,17 +556,12 @@ let html = `
                            </tr>
                            <tr>
                               <td class="cage">
-                                 <div class="cage_items" style="background: url(/647.png) 100% 100% no-repeat, url(/647.png) 0% 100% no-repeat, url(/3190.png) 100% 0% no-repeat, url(/418.png) 0% 0% no-repeat;">
+                                 <div class="cage_items" style="background: url(647.png) 100% 100% no-repeat, url(647.png) 0% 100% no-repeat, url(3190.png) 100% 0% no-repeat, url(418.png) 0% 0% no-repeat;">
                                     <!----> <!---->
                                  </div>
                               </td>
                               <td class="cage">
-                                 <div class="cage_items" style="background: url(/1035.png) 0% 100% no-repeat, url(/1035.png) 100% 0% no-repeat, url(/1035.png) 0% 0% no-repeat;">
-                                    <!----> <!---->
-                                 </div>
-                              </td>
-                              <td class="cage">
-                                 <div class="cage_items">
+                                 <div class="cage_items" style="background: url(1035.png) 0% 100% no-repeat, url(1035.png) 100% 0% no-repeat, url(1035.png) 0% 0% no-repeat;">
                                     <!----> <!---->
                                  </div>
                               </td>
@@ -597,7 +592,12 @@ let html = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <!----> <span class="move_parent"><img src="/9000.png" class="move_img"> <span class="move_name">Шелестящий тростник</span></span>
+                                    <!----> <!---->
+                                 </div>
+                              </td>
+                              <td class="cage">
+                                 <div class="cage_items">
+                                    <!----> <span class="move_parent"><img src="9000.png" class="move_img"> <span class="move_name">Шелестящий тростник</span></span>
                                  </div>
                               </td>
                               <td class="cage">
@@ -617,7 +617,7 @@ let html = `
             <td>
                <span class="title">Во рту</span> 
                <div id="itemList">
-                  <div id="37911598" class="itemInMouth"><img src="/2896.png"></div>
+                  <div id="37911598" class="itemInMouth"><img src="2896.png"></div>
                </div>
                <a href="#">Смешивать</a> <!----><br><br> 
                <div id="thdey" style="display: none;">
@@ -660,7 +660,7 @@ let html = `
                                  <img src="/img/loading.gif" id="pairs-loading" style="margin-top: 5px; display: none;"> 
                                  <p>
                                     Вы стали парой с кошкой по имени <a href="/cat936551">Задорница</a> на <span data-who="936551" class="pair">65.3</span>%.
-                                    <a href="#" title="Разлюбить" class="pair-delete"><img src="/pair_delete.png"></a> <a href="#" title="Усыновить/удочерить кого-либо" class="adopt"><img src="/pair_adopt.png"></a> <!---->
+                                    <a href="#" title="Разлюбить" class="pair-delete"><img src="pair_delete.png"></a> <a href="#" title="Усыновить/удочерить кого-либо" class="adopt"><img src="pair_adopt.png"></a> <!---->
                                  </p>
                               </div>
                            </div>
@@ -1618,7 +1618,7 @@ $(document).ready(function() {
         background-repeat: no-repeat;
         width: 16px;
         height: 16px;
-        background-image: url(/ui-icons_d19405_256x240.png)
+        background-image: url(ui-icons_d19405_256x240.png)
       }
       
       .ui-widget-overlay {
@@ -1765,7 +1765,7 @@ $(document).ready(function() {
       }
       
       .ui-widget-content .ui-icon {
-        background-image: url(/ui-icons_d19405_256x240.png)
+        background-image: url(ui-icons_d19405_256x240.png)
       }
       
       .ui-widget-header .ui-icon {
@@ -3090,7 +3090,7 @@ $(document).ready(function() {
     background: url("/cw3/symbole/arrow_claws.png") 0 0 no-repeat; }
   
   .arrow-teeth {
-    background: url("/arrow_teeth.png") 0 0 no-repeat; }
+    background: url("arrow_teeth.png") 0 0 no-repeat; }
   
   .arrow {
     height: 8px;
