@@ -372,25 +372,7 @@ let html1 = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <span class="catWithArrow">
-                                       <!----> 
-                                       <span class="cat">
-                                          <div data-v-59afe5e8="" class="d">
-                                             <div data-v-59afe5e8="" class="first" style="background-size: 73%; background-image: url(&quot;/cw3/composited/b0e10b7f6a836277.png); position: absolute;"></div>
-                                             <div data-v-59afe5e8="" class="" style="background-size: 73%; background-image: url(&quot;/cw3/cats/0/defects/dirt/base/1/1.png); position: absolute;"></div>
-                                             <div data-v-59afe5e8="" class="" style="background-size: 73%; background-image: url(&quot;/cw3/cats/0/defects/dirt/base/1/tail/6/1.png); position: absolute;"></div>
-                                          </div>
-                                          <!----> <!----> 
-                                          <span class="cat_tooltip">
-                                             <u><a href="/cat1601347">Выдролап</a></u><br> <!----> 
-                                             <div><small><i>Оруженосец</i></small></div>
-                                             <!---->
-                                             Его запах:<br> <img src="odoroj/3.png"><br> <span class="online">[ <font color="#A52A2A">Спит</font> ]</span>
-                                          </span>
-                                          <!---->
-                                       </span>
-                                    </span>
-                                    <!---->
+                                    <!----> <!---->
                                  </div>
                               </td>
                               <td class="cage">
@@ -410,28 +392,7 @@ let html1 = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <span class="catWithArrow">
-                                       <!----> 
-                                       <span class="cat">
-                                          <div data-v-59afe5e8="" class="d">
-                                             <div data-v-59afe5e8="" class="first" style="background-size: 82%; background-image: url(&quot;/cw3/composited/5cb240656bc1a2e5.png); position: absolute;"></div>
-                                             <div data-v-59afe5e8="" class="" style="background-size: 82%; background-image: url(&quot;/cw3/cats/0/costume/797.png); position: absolute;"></div>
-                                             <div data-v-59afe5e8="" class="" style="background-size: 82%; background-image: url(&quot;/cw3/cats/0/defects/trauma/1.png); position: absolute;"></div>
-                                          </div>
-                                          <!----> <!----> 
-                                          <span class="cat_tooltip">
-                                             <u><a href="/cat1567977">Шутовка</a></u><br> <!----> 
-                                             <div><small><i>Королева</i></small></div>
-                                             У неё во рту:
-                                             <ol class="mouth">
-                                                <li><img src="https://catwar.su/cw3/things/560.png"></li>
-                                             </ol>
-                                             Её запах:<br> <img src="odoroj/3.png"><br> <span class="online">[ <font color="#333333">Недавно ушла</font> ]</span>
-                                          </span>
-                                          <!---->
-                                       </span>
-                                    </span>
-                                    <!---->
+                                    <!----> <!---->
                                  </div>
                               </td>
                            </tr>
