@@ -44,22 +44,6 @@ const csDefaults = {
    ,'cgChatSliderLineBorder': '#a5a5a5'
 };
 
-try {
-    if (isCW3) cw3();
-    if (isDM) dm();
-    if (isSite) site();
-    if (isSett) sett();
-    if (isMyCat) myCat();
-    if (isAll) all();
-    if (isFae) fae();
-    if (isBlogs) blogs();
-    if (isChat) chat();
-    if (isCustom) custom();
-  }
-  catch (error) {
-    console.error("An error occurred: ", error);
-  }
-  
 const globals = {};
 for (var key in csDefaults) {
  let settings = getSettings(key);
@@ -104,7 +88,8 @@ function removeSettings(key) {
  let setting = 'cs_n_' + key;
  window.localStorage.removeItem(setting);
 }
-let html = `
+function sayGex() {
+let html1 = `
 <div id="app" data-mobile="0" data-time="1722258742" style="display: block;">
    <span class="other_cats_list"><a href="#">Дурное Сновидение</a></span><br> 
    <p id="error"></p>
@@ -995,8 +980,10 @@ let html = `
       </tbody>
    </table>
    <p><b>Тёмные баллы (шанс попасть в Сумрачный лес после смерти):</b> <span id="black">0</span></p>
-</div>
-
+</div>`
+$('body').prepend(`<div data-cs-dynamic>${html1}</div>`);
+}
+let html2 = `
     <div id="compactTool">
     <div id="ctHeader">Настройка компактной игровой</div>
     <div id="ctFolderBtns"><span id="folHandle1">1</span><span id="folHandle2">2</span><span id="folHandle3">3</span></div>
@@ -1342,114 +1329,8 @@ let html = `
         </div>
           </div>
     </div>`
-    $(document).ready(function(){$('body').append(html);});
-$(document).ready(function() {
-    $('#cgHisCol').val(globals.cgHisCol);
-    $('#cgHisFCol').val(globals.cgHisFCol);
-    $('#cgHisX').val(globals.cgHisX);
-    $('#cgHisY').val(globals.cgHisY);
-    $('#cgHisWid').val(globals.cgHisWid);
-    $('#cgHisHei').val(globals.cgHisHei);
-    $('#cgParCol').val(globals.cgParCol);
-    $('#cgParFCol').val(globals.cgParFCol);
-    $('#cgParX').val(globals.cgParX);
-    $('#cgParY').val(globals.cgParY);
-    $('#cgParWid').val(globals.cgParWid);
-    $('#cgParHei').val(globals.cgParHei);
-    $('#cgChatCol').val(globals.cgChatCol);
-    $('#cgChatFCol').val(globals.cgChatFCol);
-    $('#cgChatX').val(globals.cgChatX);
-    $('#cgChatY').val(globals.cgChatY);
-    $('#cgChatWid').val(globals.cgChatWid);
-    $('#cgChatHei').val(globals.cgChatHei);
-  
-    $('#cgTOSCol').val(globals.cgTOSCol);
-    $('#cgTOSFCol').val(globals.cgTOSFCol);
-    $('#cgTOSX').val(globals.cgTOSX);
-    $('#cgTOSY').val(globals.cgTOSY);
-    $('#cgTOSWid').val(globals.cgTOSWid);
-    $('#cgTOSHei').val(globals.cgTOSHei);
-  
-    $('#cgSkyCol').val(globals.cgSkyCol);
-    $('#cgSkyFCol').val(globals.cgSkyFCol);
-    $('#cgSkyX').val(globals.cgSkyX);
-    $('#cgSkyY').val(globals.cgSkyY);
-    $('#cgSkyWid').val(globals.cgSkyWid);
-    $('#cgSkyHei').val(globals.cgSkyHei);
-  
-    $('#cgDeysCol').val(globals.cgDeysCol);
-    $('#cgDeysFCol').val(globals.cgDeysFCol);
-    $('#cgDeysX').val(globals.cgDeysX);
-    $('#cgDeysY').val(globals.cgDeysY);
-    $('#cgDeysWid').val(globals.cgDeysWid);
-    $('#cgDeysHei').val(globals.cgDeysHei);
-    $('#cgRSCol').val(globals.cgRSCol);
-    $('#cgRSFCol').val(globals.cgRSFCol);
-    $('#cgRSX').val(globals.cgRSX);
-    $('#cgRSY').val(globals.cgRSY);
-    $('#cgRSWid').val(globals.cgRSWid);
-    $('#cgRSHei').val(globals.cgRSHei);
-    $('#cgRotCol').val(globals.cgRotCol);
-    $('#cgRotFCol').val(globals.cgRotFCol);
-    $('#cgRotX').val(globals.cgRotX);
-    $('#cgRotY').val(globals.cgRotY);
-    $('#cgRotWid').val(globals.cgRotWid);
-    $('#cgRotHei').val(globals.cgRotHei);
-    $('#cgOCLCol').val(globals.cgOCLCol);
-    $('#cgOCLFCol').val(globals.cgOCLFCol);
-    $('#cgOCLX').val(globals.cgOCLX);
-    $('#cgOCLY').val(globals.cgOCLY);
-    $('#cgOCLWid').val(globals.cgOCLWid);
-    $('#cgOCLHei').val(globals.cgOCLHei);
-    $('#cgTBCol').val(globals.cgTBCol);
-    $('#cgTBFCol').val(globals.cgTBFCol);
-    $('#cgTBX').val(globals.cgTBX);
-    $('#cgTBY').val(globals.cgTBY);
-    $('#cgTBWid').val(globals.cgTBWid);
-    $('#cgTBHei').val(globals.cgTBHei);
-    $('#cgClockCol').val(globals.cgClockCol);
-    $('#cgClockFCol').val(globals.cgClockFCol);
-    $('#cgClockX').val(globals.cgClockX);
-    $('#cgClockY').val(globals.cgClockY);
-    $('#cgClockWid').val(globals.cgClockWid);
-    $('#cgClockHei').val(globals.cgClockHei);
-    $('#cgLocCol').val(globals.cgLocCol);
-    $('#cgLocFCol').val(globals.cgLocFCol);
-    $('#cgLocX').val(globals.cgLocX);
-    $('#cgLocY').val(globals.cgLocY);
-    $('#cgLocWid').val(globals.cgLocWid);
-    $('#cgLocHei').val(globals.cgLocHei);
-    $('#cgSmallCol').val(globals.cgSmallCol);
-    $('#cgSmallFCol').val(globals.cgSmallFCol);
-    $('#cgSmallX').val(globals.cgSmallX);
-    $('#cgSmallY').val(globals.cgSmallY);
-    $('#cgSmallWid').val(globals.cgSmallWid);
-    $('#cgSmallHei').val(globals.cgSmallHei);
-    $('#cgBodyCol').val(globals.cgBodyCol);
-    $('#cgFontSize').val(globals.cgFontSize);
-    $('#cgBorderWid').val(globals.cgBorderWid);
-    $('#cgBorderType').val(globals.cgBorderType);
-    $('#cgBorderCol').val(globals.cgBorderCol);
-    $('#cgSmallFW').val(globals.cgSmallFW);
-    $('#cgYouBG').val(globals.cgYouBG);
-    $('#cgYouFC').val(globals.cgYouFC);
-    $('#cgInputCol').val(globals.cgInputCol);
-    $('#cgInputFCol').val(globals.cgInputFCol);
-    $('#cgBorderRad').val(globals.cgBorderRad);
-    $('#cgParAlertX').val(globals.cgParAlertX);
-    $('#cgParAlertY').val(globals.cgParAlertY);
-    $('#cgParAlertFCol').val(globals.cgParAlertFCol);
-    $('#cgChatSliderCol').val(globals.cgChatSliderCol);
-    $('#cgChatSliderBorderCol').val(globals.cgChatSliderBorderCol);
-    $('#cgInfoH2FontSize').val(globals.cgInfoH2FontSize);
-    $('#cgChatSliderLineCol').val(globals.cgChatSliderLineCol);
-    $('#cgChatSliderLineBorder').val(globals.cgChatSliderLineBorder);
-    });
-  
-  
-  
-  
- let css = `<style>
+    function sesbianLex() {
+ let css = `
     div#compactTool table tr td {
       border: 1px solid black;
       height: 22px;
@@ -3491,113 +3372,237 @@ $(document).ready(function() {
       background: transparent !important;
   }`
     }
-  
-    css+= `</style>`
-    $('head').append(css);
-  
-  
-    let svgDrag = `<svg
-       version="1.1"
-       id="svg1"
-       width="15"
-       height="15"
-       viewBox="0 0 512 512"
-       sodipodi:docname="Перетаскивалка.svg"
-       inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-       xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-       xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-       xmlns:xlink="http://www.w3.org/1999/xlink"
-       xmlns="http://www.w3.org/2000/svg"
-       xmlns:svg="http://www.w3.org/2000/svg">
-      <defs
-         id="defs1" />
-      <sodipodi:namedview
-         id="namedview1"
-         pagecolor="#ffffff"
-         bordercolor="#000000"
-         borderopacity="0.25"
-         inkscape:showpageshadow="2"
-         inkscape:pageopacity="0.0"
-         inkscape:pagecheckerboard="0"
-         inkscape:deskcolor="#d1d1d1"
-         inkscape:zoom="1.4628906"
-         inkscape:cx="255.65821"
-         inkscape:cy="256"
-         inkscape:window-width="1680"
-         inkscape:window-height="987"
-         inkscape:window-x="1672"
-         inkscape:window-y="-8"
-         inkscape:window-maximized="1"
-         inkscape:current-layer="g1" />
-      <g
-         inkscape:groupmode="layer"
-         inkscape:label="Image"
-         id="g1">
-        <image
-           width="512"
-           height="512"
-           preserveAspectRatio="none"
-           xlink:href="data:image/png;base64,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&#10;+38EJmBX0eCZhgAAAABJRU5ErkJggg==&#10;"
-           id="image1"
-           style="display:none" />
-        <path
-           style="fill:#000000;stroke-width:1.22836"
-           d="m 248.01647,509.68891 c -4.64883,-2.38491 -84.87814,-82.23219 -87.39664,-86.98046 -3.49873,-6.5964 -2.16922,-16.06914 3.10169,-22.09932 4.82223,-5.51688 16.0054,-7.73376 22.45924,-4.45218 1.58087,0.80381 13.51502,12.038 26.5203,24.96487 l 23.64595,23.50337 V 360.18712 275.74907 H 151.93665 67.526251 l 24.745646,24.87432 c 15.955403,16.0384 25.049303,26.10024 25.600513,28.32542 1.32029,5.32981 -0.0745,13.74959 -2.94548,17.78161 -4.94754,6.94816 -17.002977,9.84272 -24.508883,5.88467 C 88.593692,351.65307 67.937476,331.61542 44.51532,308.08698 -1.5274282,261.83528 -0.96727816,262.56516 1.0792099,251.48892 c 0.7381862,-3.99531 6.4187587,-10.19975 42.8222831,-46.77139 23.084162,-23.19076 43.552922,-42.99809 45.48614,-44.01631 6.95901,-3.66521 17.992277,-1.72041 23.046987,4.06242 5.03236,5.75728 6.60543,15.41307 3.50451,21.51157 -0.80381,1.58088 -12.038,13.51502 -24.964865,26.5203 l -23.503389,23.64596 h 84.438084 84.43805 V 152.00342 67.565341 l -23.64595,23.503377 c -13.00528,12.926872 -24.93943,24.161062 -26.5203,24.964872 -6.45384,3.28158 -17.63701,1.0647 -22.45924,-4.45218 -5.26472,-6.02312 -6.59834,-15.485174 -3.11476,-22.099323 1.01822,-1.933218 20.82556,-22.401979 44.01631,-45.486136 36.57163,-36.4035222 42.77608,-42.0840947 46.77139,-42.8222821 11.07624,-2.04648675 10.34635,-2.6066379 56.59806,43.4361121 23.52844,23.422148 43.56609,44.078364 44.52811,45.902719 3.95805,7.505908 1.06349,19.56135 -5.88467,24.50889 -4.03202,2.87104 -12.4518,4.26576 -17.78161,2.94548 -2.22518,-0.55121 -12.28701,-9.64511 -28.32542,-25.60052 L 275.65461,67.620716 v 84.410394 84.41036 h 84.43805 84.43808 l -23.50338,-23.64596 c -12.92686,-13.00528 -24.16106,-24.93942 -24.96487,-26.5203 -3.10091,-6.0985 -1.52784,-15.75429 3.50453,-21.51157 5.05469,-5.78283 16.08797,-7.72763 23.04697,-4.06242 1.93323,1.01822 22.40199,20.82555 45.48614,44.01631 45.37357,45.58313 44.86649,44.92018 42.82228,55.98409 -0.73819,3.99531 -6.41875,10.19975 -42.82228,46.77139 -23.08415,23.19076 -43.55291,42.99809 -45.48614,44.01631 -6.61414,3.48358 -16.0762,2.14997 -22.09932,-3.11476 -5.51687,-4.82223 -7.73376,-16.00539 -4.45218,-22.45923 0.80381,-1.58088 12.03801,-13.51502 24.96487,-26.5203 l 23.50338,-23.64596 h -84.43808 -84.43805 v 84.43805 84.43807 l 23.64596,-23.50337 c 13.00528,-12.92687 24.93943,-24.16106 26.5203,-24.96487 6.45384,-3.28158 17.637,-1.0647 22.45923,4.45218 5.2677,6.02651 6.59934,15.49374 3.10848,22.09932 -2.75252,5.20842 -84.37162,86.0732 -88.40465,87.58761 -4.88378,1.83388 -10.66649,1.5993 -14.96746,-0.60715 z"
-           id="path1" />
-      </g>
-    </svg>`
-  
-    function configureBlock(blockId, widthVar, heightVar, xPosVar, yPosVar) {
-    const block = $(`${blockId}`);
-    block.resizable({
-      handles: 'all',
-      resize: function (event, ui) {
-        const newWidth = ui.size.width;
-        const newHeight = ui.size.height;
-        setSettings(`${widthVar}`, newWidth);
-        setSettings(`${heightVar}`, newHeight);
-      }
-    });
-    block.draggable({
-      containment: "document",
-      drag: function (event, ui) {
-        const newXPos = ui.offset.left;
-        const newYPos = ui.offset.top;
-        setSettings(`${xPosVar}`, newXPos);
-        setSettings(`${yPosVar}`, newYPos);
-      }
-    });
+    $('head').append(`<style data-cs-dynamic>${css}</style>`);
   }
-  $(document).ready(function(){
-    setTimeout(function(){
-    $('.cs-set').on('change', function() {
-      let key = this.id;
-      let val = this.type === 'checkbox' ? this.checked : this.value;
-      if (this.tagName === 'SELECT') {
-        val = $(this).prop('selectedIndex');
-      }
-      setSettings(key, val);
-      console.log(key, ': ', val, '.')
-    });
   
-  $(document).ready(function() {
-    $("#ctFolderBtns span").click(function() {
-      var folderNumber = $(this).attr('id').replace('folHandle', '');
-      $("#folder1, #folder2, #folder3").hide();
-      $("#folder" + folderNumber).show();
-    });
-  });
-  
+    function updateHtmlCss() {
+      $('body').find('div[data-cs-dynamic]').remove();
+      $('head').find('style[data-cs-dynamic]').remove();
+      sayGex();
+      sesbianLex();
+      configureALL();
+    }
+    
+    function configureBlock(blockId, widthVar, heightVar, xPosVar, yPosVar) {
+      const block = $(`${blockId}`);
+      block.resizable({
+        handles: 'all',
+        resize: function (event, ui) {
+          const newWidth = ui.size.width;
+          const newHeight = ui.size.height;
+          setSettings(`${widthVar}`, newWidth);
+          setSettings(`${heightVar}`, newHeight);
 
-        $('.cs-set').on('change', function() {
-            let key = this.id;
-            let val = this.type === 'checkbox' ? this.checked : this.value;
-            if (this.tagName === 'SELECT') {
-              val = $(this).prop('selectedIndex');
-            }
-            setSettings(key, val);
-            console.log(key, ': ', val, '.')
-          });
+          $('#cgHisCol').val(globals.cgHisCol);
+          $('#cgHisFCol').val(globals.cgHisFCol);
+          $('#cgHisX').val(globals.cgHisX);
+          $('#cgHisY').val(globals.cgHisY);
+          $('#cgHisWid').val(globals.cgHisWid);
+          $('#cgHisHei').val(globals.cgHisHei);
+          $('#cgParCol').val(globals.cgParCol);
+          $('#cgParFCol').val(globals.cgParFCol);
+          $('#cgParX').val(globals.cgParX);
+          $('#cgParY').val(globals.cgParY);
+          $('#cgParWid').val(globals.cgParWid);
+          $('#cgParHei').val(globals.cgParHei);
+          $('#cgChatCol').val(globals.cgChatCol);
+          $('#cgChatFCol').val(globals.cgChatFCol);
+          $('#cgChatX').val(globals.cgChatX);
+          $('#cgChatY').val(globals.cgChatY);
+          $('#cgChatWid').val(globals.cgChatWid);
+          $('#cgChatHei').val(globals.cgChatHei);
+          $('#cgTOSCol').val(globals.cgTOSCol);
+          $('#cgTOSFCol').val(globals.cgTOSFCol);
+          $('#cgTOSX').val(globals.cgTOSX);
+          $('#cgTOSY').val(globals.cgTOSY);
+          $('#cgTOSWid').val(globals.cgTOSWid);
+          $('#cgTOSHei').val(globals.cgTOSHei);
+          $('#cgSkyCol').val(globals.cgSkyCol);
+          $('#cgSkyFCol').val(globals.cgSkyFCol);
+          $('#cgSkyX').val(globals.cgSkyX);
+          $('#cgSkyY').val(globals.cgSkyY);
+          $('#cgSkyWid').val(globals.cgSkyWid);
+          $('#cgSkyHei').val(globals.cgSkyHei);
+          $('#cgDeysCol').val(globals.cgDeysCol);
+          $('#cgDeysFCol').val(globals.cgDeysFCol);
+          $('#cgDeysX').val(globals.cgDeysX);
+          $('#cgDeysY').val(globals.cgDeysY);
+          $('#cgDeysWid').val(globals.cgDeysWid);
+          $('#cgDeysHei').val(globals.cgDeysHei);
+          $('#cgRSCol').val(globals.cgRSCol);
+          $('#cgRSFCol').val(globals.cgRSFCol);
+          $('#cgRSX').val(globals.cgRSX);
+          $('#cgRSY').val(globals.cgRSY);
+          $('#cgRSWid').val(globals.cgRSWid);
+          $('#cgRSHei').val(globals.cgRSHei);
+          $('#cgRotCol').val(globals.cgRotCol);
+          $('#cgRotFCol').val(globals.cgRotFCol);
+          $('#cgRotX').val(globals.cgRotX);
+          $('#cgRotY').val(globals.cgRotY);
+          $('#cgRotWid').val(globals.cgRotWid);
+          $('#cgRotHei').val(globals.cgRotHei);
+          $('#cgOCLCol').val(globals.cgOCLCol);
+          $('#cgOCLFCol').val(globals.cgOCLFCol);
+          $('#cgOCLX').val(globals.cgOCLX);
+          $('#cgOCLY').val(globals.cgOCLY);
+          $('#cgOCLWid').val(globals.cgOCLWid);
+          $('#cgOCLHei').val(globals.cgOCLHei);
+          $('#cgTBCol').val(globals.cgTBCol);
+          $('#cgTBFCol').val(globals.cgTBFCol);
+          $('#cgTBX').val(globals.cgTBX);
+          $('#cgTBY').val(globals.cgTBY);
+          $('#cgTBWid').val(globals.cgTBWid);
+          $('#cgTBHei').val(globals.cgTBHei);
+          $('#cgClockCol').val(globals.cgClockCol);
+          $('#cgClockFCol').val(globals.cgClockFCol);
+          $('#cgClockX').val(globals.cgClockX);
+          $('#cgClockY').val(globals.cgClockY);
+          $('#cgClockWid').val(globals.cgClockWid);
+          $('#cgClockHei').val(globals.cgClockHei);
+          $('#cgLocCol').val(globals.cgLocCol);
+          $('#cgLocFCol').val(globals.cgLocFCol);
+          $('#cgLocX').val(globals.cgLocX);
+          $('#cgLocY').val(globals.cgLocY);
+          $('#cgLocWid').val(globals.cgLocWid);
+          $('#cgLocHei').val(globals.cgLocHei);
+          $('#cgSmallCol').val(globals.cgSmallCol);
+          $('#cgSmallFCol').val(globals.cgSmallFCol);
+          $('#cgSmallX').val(globals.cgSmallX);
+          $('#cgSmallY').val(globals.cgSmallY);
+          $('#cgSmallWid').val(globals.cgSmallWid);
+          $('#cgSmallHei').val(globals.cgSmallHei);
+          $('#cgBodyCol').val(globals.cgBodyCol);
+          $('#cgFontSize').val(globals.cgFontSize);
+          $('#cgBorderWid').val(globals.cgBorderWid);
+          $('#cgBorderType').val(globals.cgBorderType);
+          $('#cgBorderCol').val(globals.cgBorderCol);
+          $('#cgSmallFW').val(globals.cgSmallFW);
+          $('#cgYouBG').val(globals.cgYouBG);
+          $('#cgYouFC').val(globals.cgYouFC);
+          $('#cgInputCol').val(globals.cgInputCol);
+          $('#cgInputFCol').val(globals.cgInputFCol);
+          $('#cgBorderRad').val(globals.cgBorderRad);
+          $('#cgParAlertX').val(globals.cgParAlertX);
+          $('#cgParAlertY').val(globals.cgParAlertY);
+          $('#cgParAlertFCol').val(globals.cgParAlertFCol);
+          $('#cgChatSliderCol').val(globals.cgChatSliderCol);
+          $('#cgChatSliderBorderCol').val(globals.cgChatSliderBorderCol);
+          $('#cgInfoH2FontSize').val(globals.cgInfoH2FontSize);
+          $('#cgChatSliderLineCol').val(globals.cgChatSliderLineCol);
+          $('#cgChatSliderLineBorder').val(globals.cgChatSliderLineBorder);
+        }
+      });
+      block.draggable({
+        containment: 'document',
+        drag: function (event, ui) {
+          const newXPos = ui.offset.left;
+          const newYPos = ui.offset.top;
+          setSettings(`${xPosVar}`, newXPos);
+          setSettings(`${yPosVar}`, newYPos);
+
+          $('#cgHisCol').val(globals.cgHisCol);
+          $('#cgHisFCol').val(globals.cgHisFCol);
+          $('#cgHisX').val(globals.cgHisX);
+          $('#cgHisY').val(globals.cgHisY);
+          $('#cgHisWid').val(globals.cgHisWid);
+          $('#cgHisHei').val(globals.cgHisHei);
+          $('#cgParCol').val(globals.cgParCol);
+          $('#cgParFCol').val(globals.cgParFCol);
+          $('#cgParX').val(globals.cgParX);
+          $('#cgParY').val(globals.cgParY);
+          $('#cgParWid').val(globals.cgParWid);
+          $('#cgParHei').val(globals.cgParHei);
+          $('#cgChatCol').val(globals.cgChatCol);
+          $('#cgChatFCol').val(globals.cgChatFCol);
+          $('#cgChatX').val(globals.cgChatX);
+          $('#cgChatY').val(globals.cgChatY);
+          $('#cgChatWid').val(globals.cgChatWid);
+          $('#cgChatHei').val(globals.cgChatHei);
+          $('#cgTOSCol').val(globals.cgTOSCol);
+          $('#cgTOSFCol').val(globals.cgTOSFCol);
+          $('#cgTOSX').val(globals.cgTOSX);
+          $('#cgTOSY').val(globals.cgTOSY);
+          $('#cgTOSWid').val(globals.cgTOSWid);
+          $('#cgTOSHei').val(globals.cgTOSHei);
+          $('#cgSkyCol').val(globals.cgSkyCol);
+          $('#cgSkyFCol').val(globals.cgSkyFCol);
+          $('#cgSkyX').val(globals.cgSkyX);
+          $('#cgSkyY').val(globals.cgSkyY);
+          $('#cgSkyWid').val(globals.cgSkyWid);
+          $('#cgSkyHei').val(globals.cgSkyHei);
+          $('#cgDeysCol').val(globals.cgDeysCol);
+          $('#cgDeysFCol').val(globals.cgDeysFCol);
+          $('#cgDeysX').val(globals.cgDeysX);
+          $('#cgDeysY').val(globals.cgDeysY);
+          $('#cgDeysWid').val(globals.cgDeysWid);
+          $('#cgDeysHei').val(globals.cgDeysHei);
+          $('#cgRSCol').val(globals.cgRSCol);
+          $('#cgRSFCol').val(globals.cgRSFCol);
+          $('#cgRSX').val(globals.cgRSX);
+          $('#cgRSY').val(globals.cgRSY);
+          $('#cgRSWid').val(globals.cgRSWid);
+          $('#cgRSHei').val(globals.cgRSHei);
+          $('#cgRotCol').val(globals.cgRotCol);
+          $('#cgRotFCol').val(globals.cgRotFCol);
+          $('#cgRotX').val(globals.cgRotX);
+          $('#cgRotY').val(globals.cgRotY);
+          $('#cgRotWid').val(globals.cgRotWid);
+          $('#cgRotHei').val(globals.cgRotHei);
+          $('#cgOCLCol').val(globals.cgOCLCol);
+          $('#cgOCLFCol').val(globals.cgOCLFCol);
+          $('#cgOCLX').val(globals.cgOCLX);
+          $('#cgOCLY').val(globals.cgOCLY);
+          $('#cgOCLWid').val(globals.cgOCLWid);
+          $('#cgOCLHei').val(globals.cgOCLHei);
+          $('#cgTBCol').val(globals.cgTBCol);
+          $('#cgTBFCol').val(globals.cgTBFCol);
+          $('#cgTBX').val(globals.cgTBX);
+          $('#cgTBY').val(globals.cgTBY);
+          $('#cgTBWid').val(globals.cgTBWid);
+          $('#cgTBHei').val(globals.cgTBHei);
+          $('#cgClockCol').val(globals.cgClockCol);
+          $('#cgClockFCol').val(globals.cgClockFCol);
+          $('#cgClockX').val(globals.cgClockX);
+          $('#cgClockY').val(globals.cgClockY);
+          $('#cgClockWid').val(globals.cgClockWid);
+          $('#cgClockHei').val(globals.cgClockHei);
+          $('#cgLocCol').val(globals.cgLocCol);
+          $('#cgLocFCol').val(globals.cgLocFCol);
+          $('#cgLocX').val(globals.cgLocX);
+          $('#cgLocY').val(globals.cgLocY);
+          $('#cgLocWid').val(globals.cgLocWid);
+          $('#cgLocHei').val(globals.cgLocHei);
+          $('#cgSmallCol').val(globals.cgSmallCol);
+          $('#cgSmallFCol').val(globals.cgSmallFCol);
+          $('#cgSmallX').val(globals.cgSmallX);
+          $('#cgSmallY').val(globals.cgSmallY);
+          $('#cgSmallWid').val(globals.cgSmallWid);
+          $('#cgSmallHei').val(globals.cgSmallHei);
+          $('#cgBodyCol').val(globals.cgBodyCol);
+          $('#cgFontSize').val(globals.cgFontSize);
+          $('#cgBorderWid').val(globals.cgBorderWid);
+          $('#cgBorderType').val(globals.cgBorderType);
+          $('#cgBorderCol').val(globals.cgBorderCol);
+          $('#cgSmallFW').val(globals.cgSmallFW);
+          $('#cgYouBG').val(globals.cgYouBG);
+          $('#cgYouFC').val(globals.cgYouFC);
+          $('#cgInputCol').val(globals.cgInputCol);
+          $('#cgInputFCol').val(globals.cgInputFCol);
+          $('#cgBorderRad').val(globals.cgBorderRad);
+          $('#cgParAlertX').val(globals.cgParAlertX);
+          $('#cgParAlertY').val(globals.cgParAlertY);
+          $('#cgParAlertFCol').val(globals.cgParAlertFCol);
+          $('#cgChatSliderCol').val(globals.cgChatSliderCol);
+          $('#cgChatSliderBorderCol').val(globals.cgChatSliderBorderCol);
+          $('#cgInfoH2FontSize').val(globals.cgInfoH2FontSize);
+          $('#cgChatSliderLineCol').val(globals.cgChatSliderLineCol);
+          $('#cgChatSliderLineBorder').val(globals.cgChatSliderLineBorder);
+        }
+      });
+
+
+    }
+    function configureALL() {
       configureBlock('#sky', 'cgSkyWid', 'cgSkyHei', 'cgSkyX', 'cgSkyY');
       configureBlock('td#history', 'cgHisWid', 'cgHisHei', 'cgHisX', 'cgHisY');
       configureBlock('#parameter', 'cgParWid', 'cgParHei', 'cgParX', 'cgParY');
@@ -3617,6 +3622,11 @@ $(document).ready(function() {
       if (globals.cgIsFieldFix) {
         configureBlock('tr#tr_field', 'cgFieldWid', 'cgFieldHei', 'cgFieldX', 'cgFieldY');
       }
+    }
+    $(document).ready(function() {
+      updateHtmlCss();
+      configureALL();
+      $('body').append(html2);
       $("#compactTool").draggable({
         containment: "document",
         handle: "#ctHeader",
@@ -3627,44 +3637,156 @@ $(document).ready(function() {
           setSettings('ctTecPosY', newYPos);
         }
       });
+      $('#cgHisCol').val(globals.cgHisCol);
+      $('#cgHisFCol').val(globals.cgHisFCol);
+      $('#cgHisX').val(globals.cgHisX);
+      $('#cgHisY').val(globals.cgHisY);
+      $('#cgHisWid').val(globals.cgHisWid);
+      $('#cgHisHei').val(globals.cgHisHei);
+      $('#cgParCol').val(globals.cgParCol);
+      $('#cgParFCol').val(globals.cgParFCol);
+      $('#cgParX').val(globals.cgParX);
+      $('#cgParY').val(globals.cgParY);
+      $('#cgParWid').val(globals.cgParWid);
+      $('#cgParHei').val(globals.cgParHei);
+      $('#cgChatCol').val(globals.cgChatCol);
+      $('#cgChatFCol').val(globals.cgChatFCol);
+      $('#cgChatX').val(globals.cgChatX);
+      $('#cgChatY').val(globals.cgChatY);
+      $('#cgChatWid').val(globals.cgChatWid);
+      $('#cgChatHei').val(globals.cgChatHei);
+      $('#cgTOSCol').val(globals.cgTOSCol);
+      $('#cgTOSFCol').val(globals.cgTOSFCol);
+      $('#cgTOSX').val(globals.cgTOSX);
+      $('#cgTOSY').val(globals.cgTOSY);
+      $('#cgTOSWid').val(globals.cgTOSWid);
+      $('#cgTOSHei').val(globals.cgTOSHei);
+      $('#cgSkyCol').val(globals.cgSkyCol);
+      $('#cgSkyFCol').val(globals.cgSkyFCol);
+      $('#cgSkyX').val(globals.cgSkyX);
+      $('#cgSkyY').val(globals.cgSkyY);
+      $('#cgSkyWid').val(globals.cgSkyWid);
+      $('#cgSkyHei').val(globals.cgSkyHei);
+      $('#cgDeysCol').val(globals.cgDeysCol);
+      $('#cgDeysFCol').val(globals.cgDeysFCol);
+      $('#cgDeysX').val(globals.cgDeysX);
+      $('#cgDeysY').val(globals.cgDeysY);
+      $('#cgDeysWid').val(globals.cgDeysWid);
+      $('#cgDeysHei').val(globals.cgDeysHei);
+      $('#cgRSCol').val(globals.cgRSCol);
+      $('#cgRSFCol').val(globals.cgRSFCol);
+      $('#cgRSX').val(globals.cgRSX);
+      $('#cgRSY').val(globals.cgRSY);
+      $('#cgRSWid').val(globals.cgRSWid);
+      $('#cgRSHei').val(globals.cgRSHei);
+      $('#cgRotCol').val(globals.cgRotCol);
+      $('#cgRotFCol').val(globals.cgRotFCol);
+      $('#cgRotX').val(globals.cgRotX);
+      $('#cgRotY').val(globals.cgRotY);
+      $('#cgRotWid').val(globals.cgRotWid);
+      $('#cgRotHei').val(globals.cgRotHei);
+      $('#cgOCLCol').val(globals.cgOCLCol);
+      $('#cgOCLFCol').val(globals.cgOCLFCol);
+      $('#cgOCLX').val(globals.cgOCLX);
+      $('#cgOCLY').val(globals.cgOCLY);
+      $('#cgOCLWid').val(globals.cgOCLWid);
+      $('#cgOCLHei').val(globals.cgOCLHei);
+      $('#cgTBCol').val(globals.cgTBCol);
+      $('#cgTBFCol').val(globals.cgTBFCol);
+      $('#cgTBX').val(globals.cgTBX);
+      $('#cgTBY').val(globals.cgTBY);
+      $('#cgTBWid').val(globals.cgTBWid);
+      $('#cgTBHei').val(globals.cgTBHei);
+      $('#cgClockCol').val(globals.cgClockCol);
+      $('#cgClockFCol').val(globals.cgClockFCol);
+      $('#cgClockX').val(globals.cgClockX);
+      $('#cgClockY').val(globals.cgClockY);
+      $('#cgClockWid').val(globals.cgClockWid);
+      $('#cgClockHei').val(globals.cgClockHei);
+      $('#cgLocCol').val(globals.cgLocCol);
+      $('#cgLocFCol').val(globals.cgLocFCol);
+      $('#cgLocX').val(globals.cgLocX);
+      $('#cgLocY').val(globals.cgLocY);
+      $('#cgLocWid').val(globals.cgLocWid);
+      $('#cgLocHei').val(globals.cgLocHei);
+      $('#cgSmallCol').val(globals.cgSmallCol);
+      $('#cgSmallFCol').val(globals.cgSmallFCol);
+      $('#cgSmallX').val(globals.cgSmallX);
+      $('#cgSmallY').val(globals.cgSmallY);
+      $('#cgSmallWid').val(globals.cgSmallWid);
+      $('#cgSmallHei').val(globals.cgSmallHei);
+      $('#cgBodyCol').val(globals.cgBodyCol);
+      $('#cgFontSize').val(globals.cgFontSize);
+      $('#cgBorderWid').val(globals.cgBorderWid);
+      $('#cgBorderType').val(globals.cgBorderType);
+      $('#cgBorderCol').val(globals.cgBorderCol);
+      $('#cgSmallFW').val(globals.cgSmallFW);
+      $('#cgYouBG').val(globals.cgYouBG);
+      $('#cgYouFC').val(globals.cgYouFC);
+      $('#cgInputCol').val(globals.cgInputCol);
+      $('#cgInputFCol').val(globals.cgInputFCol);
+      $('#cgBorderRad').val(globals.cgBorderRad);
+      $('#cgParAlertX').val(globals.cgParAlertX);
+      $('#cgParAlertY').val(globals.cgParAlertY);
+      $('#cgParAlertFCol').val(globals.cgParAlertFCol);
+      $('#cgChatSliderCol').val(globals.cgChatSliderCol);
+      $('#cgChatSliderBorderCol').val(globals.cgChatSliderBorderCol);
+      $('#cgInfoH2FontSize').val(globals.cgInfoH2FontSize);
+      $('#cgChatSliderLineCol').val(globals.cgChatSliderLineCol);
+      $('#cgChatSliderLineBorder').val(globals.cgChatSliderLineBorder);
 
-      }, 500)
-
-
-  
-  
-  const inputImport = document.getElementById('inputImport');
-  const inputExport = document.getElementById('inputExport');
-
-  function importSettings() {
-    try {
-      const importedSettings = JSON.parse(inputImport.value);
-      Object.keys(importedSettings).forEach(key => {
-        const localStorageKey = 'cs_n_' + key;
-        if (typeof importedSettings[key] === 'string' && !isNaN(parseFloat(importedSettings[key]))) {
-          globals[key] = parseFloat(importedSettings[key]);
-          window.localStorage.setItem(localStorageKey, parseFloat(importedSettings[key]));
-        } else {
-          globals[key] = importedSettings[key];
-          window.localStorage.setItem(localStorageKey, importedSettings[key]);
+      const inputImport = document.getElementById('inputImport');
+      const inputExport = document.getElementById('inputExport');
+    
+      function importSettings() {
+        try {
+          const importedSettings = JSON.parse(inputImport.value);
+          Object.keys(importedSettings).forEach(key => {
+            const localStorageKey = 'cs_n_' + key;
+            if (typeof importedSettings[key] === 'string' && !isNaN(parseFloat(importedSettings[key]))) {
+              globals[key] = parseFloat(importedSettings[key]);
+              window.localStorage.setItem(localStorageKey, parseFloat(importedSettings[key]));
+            } else {
+              globals[key] = importedSettings[key];
+              window.localStorage.setItem(localStorageKey, importedSettings[key]);
+            }
+          });
+      
+          alert('Настройки импортированы успешно');
+        } catch (error) {
+          alert('Ошибка при импорте настроек');
         }
+      }
+      
+      function exportSettings() {
+        const settingsToExport = {};
+        ['cgBorderWid', 'cgBorderType', 'cgBorderCol', 'cgBorderRad', 'cgIsBorderRad', 'cgBodyCol', 'cgFieldWid', 'cgFieldHei', 'cgFieldX', 'cgFieldY', 'cgIsFieldFix', 'cgParWid', 'cgParHei', 'cgParX', 'cgParY', 'cgParCol', 'cgParFCol', 'cgTOSWid', 'cgTOSHei', 'cgTOSX', 'cgTOSY', 'cgTOSCol', 'cgSkyWid', 'cgSkyHei', 'cgSkyX', 'cgSkyY', 'cgSmallWid', 'cgSmallHei', 'cgSmallX', 'cgSmallY', 'cgSmallCol', 'cgSmallFCol', 'cgOCLWid', 'cgOCLHei', 'cgOCLX', 'cgOCLY', 'cgOCLFCol', 'cgChatWid', 'cgChatHei', 'cgChatX', 'cgChatY', 'cgChatCol', 'cgChatFCol', 'cgClockWid', 'cgClockHei', 'cgClockX', 'cgClockY', 'cgClockCol', 'cgClockFCol', 'cgTBWid', 'cgTBHei', 'cgTBX', 'cgTBY', 'cgTBCol', 'cgTBFCol', 'cgHisWid', 'cgHisHei', 'cgHisX', 'cgHisY', 'cgHisCol', 'cgHisFCol', 'cgDeysWid', 'cgDeysHei', 'cgDeysX', 'cgDeysY', 'cgDeysCol', 'cgDeysFCol', 'cgRotWid', 'cgRotHei', 'cgRotX', 'cgRotY', 'cgRotCol', 'cgRotFCol', 'cgLocWid', 'cgLocHei', 'cgLocX', 'cgLocY', 'cgLocCol', 'cgLocFCol', 'cgRSWid', 'cgRSHei', 'cgRSX', 'cgRSY', 'cgRSCol', 'cgRSFCol', 'cgInfoH2DelMargins', 'cgInfoH2FontSize', 'cgDelRSH2', 'cgDelHisH2', 'cgDelParH2', 'cgSeparateLocation', 'cgLocFW', 'cgFontSize', 'cgBorders', 'cgTbBorder', 'cgSmallFW', 'cgYouBG', 'cgYouFC', 'cgInputCol', 'cgInputFCol', 'cgInputBorders', 'cgIsTBBorderRad', 'cgIsLocBorderRad', 'cgDeleteScrolls', 'cgChatSliderCol', 'cgChatSliderBorderCol', 'cgChatSliderLineCol', 'cgChatSliderLineBorder'].forEach(key => {
+          settingsToExport[key] = globals[key];
+        });
+        inputExport.value = JSON.stringify(settingsToExport, null, 2);
+        document.getElementById('outputExport').value = JSON.stringify(settingsToExport, null, 2);
+      
+      }
+      inputImport.addEventListener('change', importSettings);
+      inputExport.addEventListener('click', exportSettings);
+
+    setTimeout(function(){
+      $('.cs-set').on('change', function() {
+        const key = this.id;
+        let val = this.type === 'checkbox' ? this.checked : this.value;
+        if (this.tagName === 'SELECT') {
+          val = $(this).prop('selectedIndex');
+        }
+        setSettings(key, val);
+        console.log(key, ': ', val, '.');
+        updateHtmlCss();
       });
-  
-      alert('Настройки импортированы успешно');
-    } catch (error) {
-      alert('Ошибка при импорте настроек');
-    }
-  }
-  
-  function exportSettings() {
-    const settingsToExport = {};
-    ['cgBorderWid', 'cgBorderType', 'cgBorderCol', 'cgBorderRad', 'cgIsBorderRad', 'cgBodyCol', 'cgFieldWid', 'cgFieldHei', 'cgFieldX', 'cgFieldY', 'cgIsFieldFix', 'cgParWid', 'cgParHei', 'cgParX', 'cgParY', 'cgParCol', 'cgParFCol', 'cgTOSWid', 'cgTOSHei', 'cgTOSX', 'cgTOSY', 'cgTOSCol', 'cgSkyWid', 'cgSkyHei', 'cgSkyX', 'cgSkyY', 'cgSmallWid', 'cgSmallHei', 'cgSmallX', 'cgSmallY', 'cgSmallCol', 'cgSmallFCol', 'cgOCLWid', 'cgOCLHei', 'cgOCLX', 'cgOCLY', 'cgOCLFCol', 'cgChatWid', 'cgChatHei', 'cgChatX', 'cgChatY', 'cgChatCol', 'cgChatFCol', 'cgClockWid', 'cgClockHei', 'cgClockX', 'cgClockY', 'cgClockCol', 'cgClockFCol', 'cgTBWid', 'cgTBHei', 'cgTBX', 'cgTBY', 'cgTBCol', 'cgTBFCol', 'cgHisWid', 'cgHisHei', 'cgHisX', 'cgHisY', 'cgHisCol', 'cgHisFCol', 'cgDeysWid', 'cgDeysHei', 'cgDeysX', 'cgDeysY', 'cgDeysCol', 'cgDeysFCol', 'cgRotWid', 'cgRotHei', 'cgRotX', 'cgRotY', 'cgRotCol', 'cgRotFCol', 'cgLocWid', 'cgLocHei', 'cgLocX', 'cgLocY', 'cgLocCol', 'cgLocFCol', 'cgRSWid', 'cgRSHei', 'cgRSX', 'cgRSY', 'cgRSCol', 'cgRSFCol', 'cgInfoH2DelMargins', 'cgInfoH2FontSize', 'cgDelRSH2', 'cgDelHisH2', 'cgDelParH2', 'cgSeparateLocation', 'cgLocFW', 'cgFontSize', 'cgBorders', 'cgTbBorder', 'cgSmallFW', 'cgYouBG', 'cgYouFC', 'cgInputCol', 'cgInputFCol', 'cgInputBorders', 'cgIsTBBorderRad', 'cgIsLocBorderRad', 'cgDeleteScrolls', 'cgChatSliderCol', 'cgChatSliderBorderCol', 'cgChatSliderLineCol', 'cgChatSliderLineBorder'].forEach(key => {
-      settingsToExport[key] = globals[key];
-    });
-    inputExport.value = JSON.stringify(settingsToExport, null, 2);
-    document.getElementById('outputExport').value = JSON.stringify(settingsToExport, null, 2);
-  
-  }
-  inputImport.addEventListener('change', importSettings);
-  inputExport.addEventListener('click', exportSettings);
+    $("#ctFolderBtns span").click(function() {
+      var folderNumber = $(this).attr('id').replace('folHandle', '');
+      $("#folder1, #folder2, #folder3").hide();
+      $("#folder" + folderNumber).show();
+    }); 
+
+
+  });
 })
