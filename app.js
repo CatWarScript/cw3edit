@@ -258,7 +258,42 @@ let html1 = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <!----> <!---->
+                                <div class="cage_items">
+                                    <span class="catWithArrow">
+                                        <div style="position: relative;">
+                                            <div id="arrow1293224" class="arrow arrow-teeth" style="top: 75px; transform: rotate(19deg); opacity: 1;">
+                                            <table style="width: 100px;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="arrow_red" style="width: 0px;"></td>
+                                                        <td class="arrow_green" style="width: 50px;"></td>
+                                                        <td style="width: 50px;"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </div>
+                                        <span class="cat">
+                                            <div data-v-59afe5e8="" class="d dead">
+                                            <div data-v-59afe5e8="" class="first" style="background-size: 100%; background-image: url('zagruzheno1.png'); position: absolute;"></div>
+                                            </div>
+                                            <!----> <!----> 
+                                            <span class="cat_tooltip">
+                                            <u><a href="/cat1293224">Выжигание</a></u><br> <!----> <!----> 
+                                            <div><small><i>Подружка предводителя</i></small></div>
+                                            У него во рту:
+                                            <ol class="mouth">
+                                                <li><img src="647.png"></li>
+                                                <li><img src="344.png"></li>
+                                                <li><img src="341.png"></li>
+                                            </ol>
+                                            Его запах:<br> <img src="51.png"><br> <a class="cws-show-more" href="#" data-id="1293224">Подробнее</a><br><span class="online">[ <font color="#006400">В игре</font> ]</span>
+                                            </span>
+                                            <!---->
+                                        </span>
+                                    </span>
+                                    <!---->
+                                </div>
                                  </div>
                               </td>
                               <td class="cage" style="background: url(&quot;weather/puddle_1.png) 0px 0px;">
