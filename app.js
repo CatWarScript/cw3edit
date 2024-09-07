@@ -1394,6 +1394,9 @@ margin: 0px;
 top: 3px;
 left: 3px; }
 
+div#folder1, div#folder2 {
+text-align: center; }
+
 div#folder1>table {
 margin: 5px auto;
 background-color: var(--cwsc-bckg-4);
@@ -1443,6 +1446,15 @@ div#folder1>table>tbody>tr:nth-of-type(n+2)>td:nth-of-type(n+2):nth-of-type(-n+6
 border-right: 2px dotted var(--cwsc-brdr-4) !important; }
 
 div#folder1>table>tbody>tr:nth-of-type(n+2)>td:nth-of-type(n+2):nth-of-type(-n+7) {
+border-bottom: 2px dotted var(--cwsc-brdr-4) !important; }
+
+div#folder2>table>tbody>tr:nth-of-type(n+1)>td:first-of-type {
+border-bottom: 2px dashed var(--cwsc-brdr-1) !important; }
+
+div#folder2>table>tbody>tr:nth-of-type(n+1)>td:first-of-type {
+border-right: 3px solid var(--cwsc-brdr-3) !important; }
+
+div#folder2>table>tbody>tr:nth-of-type(n+1)>td:nth-of-type(n+2):nth-of-type(-n+7) {
 border-bottom: 2px dotted var(--cwsc-brdr-4) !important; }
 
 input.cs-set[type="number"] {
