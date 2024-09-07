@@ -281,14 +281,14 @@ let html1 = `
                                             <span class="cat_tooltip">
                                             <u><a href="/cat1293224">Выжигание</a></u><br> <!----> <!----> 
                                             <div><small><i>Подружка предводителя</i></small></div>
-                                            У него во рту:
+                                            У неё во рту:
                                             <ol class="mouth">
                                                 <li><img src="647.png"></li>
                                                 <li><img src="1120.png"></li>
                                                 <li><img src="11193.png"></li>
                                                 <li><img src="5513.png"></li>
                                             </ol>
-                                            Его запах:<br> <img src="51.png"><br> <a class="cws-show-more" href="#" data-id="1293224">Подробнее</a><br><span class="online">[ <font color="#006400">В игре</font> ]</span>
+                                            Её запах:<br> <img src="3.png"><br> <a class="cws-show-more" href="#" data-id="1293224">Подробнее</a><br><span class="online">[ <font color="#006400">В игре</font> ]</span>
                                             </span>
                                             <!---->
                                         </span>
@@ -507,7 +507,30 @@ let html1 = `
                               </td>
                               <td class="cage">
                                  <div class="cage_items">
-                                    <!----> <!---->
+                                    <span class="catWithArrow">
+                                       <!----> 
+                                       <span class="cat">
+                                          <div data-v-59afe5e8="" class="d">
+                                             <div data-v-59afe5e8="" class="first" style="background-size: 90%; background-image: url('850024755118de0f.png'); position: absolute;"></div>
+                                             <div data-v-59afe5e8="" class="" style="background-size: 90%; background-image: url('HyBi.png'); position: absolute;"></div>
+                                          </div>
+                                          <!----> <!----> 
+                                          <span class="cat_tooltip">
+                                             <u><a href="/cat1562064">Весело</a></u><br> <!----> 
+                                             <div><small><i>Матрос</i></small></div>
+                                             У него во рту:
+                                             <ol class="mouth">
+                                                <li><img src="647.png"></li>
+                                                <li><img src="1120.png"></li>
+                                                <li><img src="11193.png"></li>
+                                                <li><img src="5513.png"></li>
+                                             </ol>
+                                             Его запах:<br> <img src="222.png"><br> <span class="online">[ <font color="#A52A2A">Спит</font> ]</span>
+                                          </span>
+                                          <!---->
+                                       </span>
+                                    </span>
+                                    <!---->
                                  </div>
                               </td>
                               <td class="cage">
