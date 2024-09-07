@@ -1363,7 +1363,9 @@ background-color: var(--cwsc-bckg-1);
 border: 1px solid var(--cwsc-brdr-1) !important;
 color: var(--cwsc-txt-4);
 font-size: 18px;
-font-weight: 600; }
+font-weight: 600;
+padding: 5px 0px;
+text-align: center; }
 
 div#ctFolderBtns {
 display: flex;
@@ -1528,7 +1530,6 @@ font-size: 13px; }
       width: 570px;
       height: auto;
       font-size: 14px !important;
-      background-color: rgba(255, 255, 255, .5);
       font-family: montserrat;
     }
     #mainTable {
