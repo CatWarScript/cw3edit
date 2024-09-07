@@ -284,8 +284,9 @@ let html1 = `
                                             У него во рту:
                                             <ol class="mouth">
                                                 <li><img src="647.png"></li>
-                                                <li><img src="344.png"></li>
-                                                <li><img src="341.png"></li>
+                                                <li><img src="1120.png"></li>
+                                                <li><img src="11193.png"></li>
+                                                <li><img src="5513.png"></li>
                                             </ol>
                                             Его запах:<br> <img src="51.png"><br> <a class="cws-show-more" href="#" data-id="1293224">Подробнее</a><br><span class="online">[ <font color="#006400">В игре</font> ]</span>
                                             </span>
