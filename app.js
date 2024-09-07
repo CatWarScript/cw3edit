@@ -1201,81 +1201,32 @@ let html2 = `
           </table>
         </div>
 <div id="folder2" class="folder">
-  <label>Вся страница ➡</label>
-  <input class="cs-set" id="cgBodyCol" type="color"${globals.cgBodyCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Размер шрифта ➡</label>
-  <input class="cs-set" id="cgFontSize" type="number"${globals.cgFontSize?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
-  <br>
-  <label>Шрифт у "Мой кот" ➡</label>
-  <input class="cs-set" id="cgSmallFW" type="number"${globals.cgSmallFW?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
-  <br>
-  <label>Плюсик параметров ➡</label>
-  <input class="cs-set" id="cgParAlertX" type="number"${globals.cgParAlertX?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
-  <br>
-  <label>➡</label>
-  <input class="cs-set" id="cgParAlertY" type="number"${globals.cgParAlertY?' checked':''} style="width: 45px;" step="1" max="15000" min="0">
-  <br>
-  <label>Цвет плюсика ➡</label>
-  <input class="cs-set" id="cgParAlertFCol" type="color"${globals.cgParAlertFCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Обводка блоков ➡</label>
-  <input class="cs-set" id="cgBorders" type="checkbox"${globals.cgBorders?' checked':''}>
-  <br>
-  <label>Ширина ➡</label>
-  <input class="cs-set" id="cgBorderWid" type="number"${globals.cgBorderWid?' checked':''} style="width: 45px;" step="0.5" max="15" min="0">
-  <br>
-  <label>Цвет ➡</label>
-  <input class="cs-set" id="cgBorderCol" type="color"${globals.cgBorderCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Тип ➡</label>
-  <input class="cs-set" id="cgBorderType" type="text"${globals.cgBorderType?' checked':''} style="width: 45px;" step="0.5" max="15" min="0">
-  <br>
-  <label>Обводка у ТБ ➡</label>
-  <input class="cs-set" id="cgTbBorder" type="checkbox"${globals.cgTbBorder?' checked':''}>
-  <br>
-  <label>Фон упом. ➡</label>
-  <input class="cs-set" id="cgYouBG" type="color"${globals.cgYouBG?' checked':''} style="width: 35px;">
-  <br>
-  <label>Текст упом. ➡</label>
-  <input class="cs-set" id="cgYouFC" type="color"${globals.cgYouFC?' checked':''} style="width: 35px;">
-  <br>
-  <label>Цвет input'ов ➡</label>
-  <input class="cs-set" id="cgInputCol" type="color"${globals.cgInputCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Текст input'ов ➡</label>
-  <input class="cs-set" id="cgInputFCol" type="color"${globals.cgInputFCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Скруглённый радиус ➡</label>
-  <input class="cs-set" id="cgBorderRad" type="number"${globals.cgBorderRad?' checked':''} style="width: 45px;" step="0.5" max="150" min="0">
-  <br>
-  <label>Перетаскивать поле? ➡</label>
-  <input class="cs-set" id="cgIsFieldFix" type="checkbox"${globals.cgIsFieldFix?' checked':''}>
-  <br>
-  <label>Скруглять все блоки ➡</label>
-  <input class="cs-set" id="cgIsBorderRad" type="checkbox"${globals.cgIsBorderRad?' checked':''}>
-  <br>
-  <label>Скруглять локацию ➡</label>
-  <input class="cs-set" id="cgIsLocBorderRad" type="checkbox"${globals.cgIsLocBorderRad?' checked':''}>
-  <br>
-  <label>Скруглять ТБ ➡</label>
-  <input class="cs-set" id="cgIsTBBorderRad" type="checkbox"${globals.cgIsTBBorderRad?' checked':''}>
-  <br>
-  <label>Поменять скроллы ➡</label>
-  <input class="cs-set" id="cgDeleteScrolls" type="checkbox"${globals.cgDeleteScrolls?' checked':''}>
-  <br>
-  <label>Кружочек ползунка чата ➡</label>
-  <input class="cs-set" id="cgChatSliderCol" type="color"${globals.cgChatSliderCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Бордер кружочка ➡</label>
-  <input class="cs-set" id="cgChatSliderBorderCol" type="color"${globals.cgChatSliderBorderCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Полоска ползунка чата ➡</label>
-  <input class="cs-set" id="cgChatSliderLineCol" type="color"${globals.cgChatSliderLineCol?' checked':''} style="width: 35px;">
-  <br>
-  <label>Бордер полоски ➡</label>
-  <input class="cs-set" id="cgChatSliderLineBorder" type="color"${globals.cgChatSliderLineBorder?' checked':''} style="width: 35px;">
-  <br>
+<table>
+<tr><td><label>Вся страница</label></td><td><input class="cs-set" id="cgBodyCol" type="color"${globals.cgBodyCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Размер шрифта</label></td><td><input class="cs-set" id="cgFontSize" type="number"${globals.cgFontSize?' checked':''} style="width: 45px;" step="1" max="15000" min="0"></td></tr>
+<tr><td><label>Шрифт у "Мой кот"</label></td><td><input class="cs-set" id="cgSmallFW" type="number"${globals.cgSmallFW?' checked':''} style="width: 45px;" step="1" max="15000" min="0"></td></tr>
+<tr><td><label>Плюсик параметров</label></td><td><input class="cs-set" id="cgParAlertX" type="number"${globals.cgParAlertX?' checked':''} style="width: 45px;" step="1" max="15000" min="0"><input class="cs-set" id="cgParAlertY" type="number"${globals.cgParAlertY?' checked':''} style="width: 45px;" step="1" max="15000" min="0"></td></tr>
+<tr><td><label>Цвет плюсика</label></td><td><input class="cs-set" id="cgParAlertFCol" type="color"${globals.cgParAlertFCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Обводка блоков</label></td><td><input class="cs-set" id="cgBorders" type="checkbox"${globals.cgBorders?' checked':''}></td></tr>
+<tr><td><label>Ширина</label></td><td><input class="cs-set" id="cgBorderWid" type="number"${globals.cgBorderWid?' checked':''} style="width: 45px;" step="0.5" max="15" min="0"></td></tr>
+<tr><td><label>Цвет</label></td><td><input class="cs-set" id="cgBorderCol" type="color"${globals.cgBorderCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Тип</label></td><td><input class="cs-set" id="cgBorderType" type="text"${globals.cgBorderType?' checked':''} style="width: 45px;" step="0.5" max="15" min="0"></td></tr>
+<tr><td><label>Обводка у ТБ</label></td><td><input class="cs-set" id="cgTbBorder" type="checkbox"${globals.cgTbBorder?' checked':''}></td></tr>
+<tr><td><label>Фон упом.</label></td><td><input class="cs-set" id="cgYouBG" type="color"${globals.cgYouBG?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Текст упом.</label></td><td><input class="cs-set" id="cgYouFC" type="color"${globals.cgYouFC?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Цвет input'ов</label></td><td><input class="cs-set" id="cgInputCol" type="color"${globals.cgInputCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Текст input'ов</label></td><td><input class="cs-set" id="cgInputFCol" type="color"${globals.cgInputFCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Скруглённый радиус</label></td><td><input class="cs-set" id="cgBorderRad" type="number"${globals.cgBorderRad?' checked':''} style="width: 45px;" step="0.5" max="150" min="0"></td></tr>
+<tr><td><label>Перетаскивать поле</label></td><td><input class="cs-set" id="cgIsFieldFix" type="checkbox"${globals.cgIsFieldFix?' checked':''}></td></tr>
+<tr><td><label>Скруглять все блоки</label></td><td><input class="cs-set" id="cgIsBorderRad" type="checkbox"${globals.cgIsBorderRad?' checked':''}></td></tr>
+<tr><td><label>Скруглять локацию</label></td><td><input class="cs-set" id="cgIsLocBorderRad" type="checkbox"${globals.cgIsLocBorderRad?' checked':''}></td></tr>
+<tr><td><label>Скруглять ТБ</label></td><td><input class="cs-set" id="cgIsTBBorderRad" type="checkbox"${globals.cgIsTBBorderRad?' checked':''}></td></tr>
+<tr><td><label>Поменять скроллы</label></td><td><input class="cs-set" id="cgDeleteScrolls" type="checkbox"${globals.cgDeleteScrolls?' checked':''}></td></tr>
+<tr><td><label>Кружочек ползунка чата</label></td><td><input class="cs-set" id="cgChatSliderCol" type="color"${globals.cgChatSliderCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Бордер кружочка</label></td><td><input class="cs-set" id="cgChatSliderBorderCol" type="color"${globals.cgChatSliderBorderCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Полоска ползунка чата</label></td><td><input class="cs-set" id="cgChatSliderLineCol" type="color"${globals.cgChatSliderLineCol?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Бордер полоски</label></td><td><input class="cs-set" id="cgChatSliderLineBorder" type="color"${globals.cgChatSliderLineBorder?' checked':''} style="width: 35px;"></td></tr>
+</table>
 </div>
         <div id="folder3" class="folder">
         <input class="cs-set" id="cgDelParH2" type="checkbox"${globals.cgDelParH2?' checked':''}><label for="cgDelParH2">Убрать h2 у параметров</label><br>
