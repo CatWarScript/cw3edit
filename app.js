@@ -42,6 +42,7 @@ const csDefaults = {
    ,'ctTecPosY': 50 //          (beta)    Положение инструмента отладки (Сверху)
    ,'cgChatSliderLineCol': '#ebebeb'
    ,'cgChatSliderLineBorder': '#a5a5a5'
+   ,'clockFontWeight': 17
 };
 
 const globals = {};
@@ -1285,6 +1286,7 @@ let html2 = `
 <tr><td><label>Бордер кружочка</label></td><td><input class="cs-set" id="cgChatSliderBorderCol" type="color"${globals.cgChatSliderBorderCol?' checked':''} style="width: 35px;"></td></tr>
 <tr><td><label>Полоска ползунка чата</label></td><td><input class="cs-set" id="cgChatSliderLineCol" type="color"${globals.cgChatSliderLineCol?' checked':''} style="width: 35px;"></td></tr>
 <tr><td><label>Бордер полоски</label></td><td><input class="cs-set" id="cgChatSliderLineBorder" type="color"${globals.cgChatSliderLineBorder?' checked':''} style="width: 35px;"></td></tr>
+<tr><td><label>Шрифт часов</label></td><td><input class="cs-set" id="clockFontWeight" type="number"${globals.clockFontWeight?' checked':''} style="width: 45px;" step="1" max="200" min="0"></td></tr>
 </table>
 </div>
         <div id="folder3" class="folder">
@@ -3573,6 +3575,7 @@ font-size: 13px; }
           setSettings(`${heightVar}`, newHeight);
 
           $('#cgHisCol').val(globals.cgHisCol);
+          $('#clockFontWeight').val(globals.clockFontWeight);
           $('#cgHisFCol').val(globals.cgHisFCol);
           $('#cgHisX').val(globals.cgHisX);
           $('#cgHisY').val(globals.cgHisY);
@@ -3681,6 +3684,7 @@ font-size: 13px; }
 
           $('#cgHisCol').val(globals.cgHisCol);
           $('#cgHisFCol').val(globals.cgHisFCol);
+          $('#clockFontWeight').val(globals.clockFontWeight);
           $('#cgHisX').val(globals.cgHisX);
           $('#cgHisY').val(globals.cgHisY);
           $('#cgHisWid').val(globals.cgHisWid);
@@ -3818,6 +3822,7 @@ font-size: 13px; }
       });
       $('#cgHisCol').val(globals.cgHisCol);
       $('#cgHisFCol').val(globals.cgHisFCol);
+      $('#clockFontWeight').val(globals.clockFontWeight);
       $('#cgHisX').val(globals.cgHisX);
       $('#cgHisY').val(globals.cgHisY);
       $('#cgHisWid').val(globals.cgHisWid);
