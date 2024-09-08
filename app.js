@@ -1280,7 +1280,7 @@ let html2 = `
 <tr><td><label>Скруглять все блоки</label></td><td><input class="cs-set" id="cgIsBorderRad" type="checkbox"${globals.cgIsBorderRad?' checked':''}></td></tr>
 <tr><td><label>Скруглять локацию</label></td><td><input class="cs-set" id="cgIsLocBorderRad" type="checkbox"${globals.cgIsLocBorderRad?' checked':''}></td></tr>
 <tr><td><label>Скруглять ТБ</label></td><td><input class="cs-set" id="cgIsTBBorderRad" type="checkbox"${globals.cgIsTBBorderRad?' checked':''}></td></tr>
-<tr><td><label>Поменять скроллы</label></td><td><input class="cs-set" id="cgDeleteScrolls" type="checkbox"${globals.cgDeleteScrolls?' checked':''}></td></tr>
+<tr><td><label>Спрятать скроллы</label></td><td><input class="cs-set" id="cgDeleteScrolls" type="checkbox"${globals.cgDeleteScrolls?' checked':''}></td></tr>
 <tr><td><label>Кружочек ползунка чата</label></td><td><input class="cs-set" id="cgChatSliderCol" type="color"${globals.cgChatSliderCol?' checked':''} style="width: 35px;"></td></tr>
 <tr><td><label>Бордер кружочка</label></td><td><input class="cs-set" id="cgChatSliderBorderCol" type="color"${globals.cgChatSliderBorderCol?' checked':''} style="width: 35px;"></td></tr>
 <tr><td><label>Полоска ползунка чата</label></td><td><input class="cs-set" id="cgChatSliderLineCol" type="color"${globals.cgChatSliderLineCol?' checked':''} style="width: 35px;"></td></tr>
